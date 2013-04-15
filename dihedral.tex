@@ -22,9 +22,15 @@ Both the cyclic subgroup of order 2 and the Klein 4-group are dihedral. For the 
 
 Since $|D : C| = 2$, we know that both $C \normal D$ and $D$ has even order. Dihedral groups also have two generators: There exists a $c \in C$ such that $\generate{c} = C$ and that $D - C$ is a coset of $C$. If $t \in D - C$, then $Ct = D - C$ and $\generate{c,t} = D$. Another important property of dihedral groups is that, for $c \in C$ and $t \in D - C$, conjugation of $c$ by $t$ yields the inverse of $c$, that is $c^t = c^{-1}$. Showing this is slightly more involved but still follows quickly from our definition. We know that $ct \in D - C$, so $ct$ must be an involution. Then $ct^2 = ctct = 1$. Left multiplication by $c^{-1}$ now gives the desired relation: $tct = c^t = c^{-1}$. This last property is often used as a defining characteristic in the presentation of dihedral groups: 
 $$D = \generate{c, t : c^n = 1, t^2 = 1, t^{-1}ct = c^{-1}}$$
-where $|D| = 2n$ for some $n \in \Z$. This presentation is the same as what we have defined above since $\generate{c}$ is a cyclic group and $t$ cannot be in $\generate{c}$. Furthermore, $\generate{c} t$ contains only involutions because $(c^k t) \cdot (c^k t) = c^n \cdot (t^{-1} c^k t) = c^n c^{-n} = 1$.
+where $|D| = 2n$ for some $n \in \Z$. That presentation is the same as what we have defined above since $\generate{c}$ is a cyclic group and $t$ cannot be in $\generate{c}$. Furthermore, $\generate{c} t$ contains only involutions because $(c^k t) \cdot (c^k t) = c^n \cdot (t^{-1} c^k t) = c^n c^{-n} = 1$.
 
-Another way view dihedral groups is the semi-direct product of $C_n \rtimes_\varphi C_2$ where $C_n$ denotes the cyclic group of order $n$ and $\varphi : C_2 \to Aut(C_n)$ is the map that sends $1_{C_2}$ to the identity automorphism and $C_2$'s other element to the automorphism $c \mapsto c^{-1}$. From this view, we have some element $(c, 1) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_n$ and another element $(1, t) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_2$. Furthermore, $(1, t)$ has the desired conjugation action on $(c, 1)$, i.e. $(c,1)^{(1,t)} = (c^{-1}, 1)$. Finally, we note that $(c, 1)$ and $(1, t)$ comprise a complete set of generators for $C_n \rtimes_\varphi C_2$. Then $C_n \rtimes_\varphi C_2 = \generate{(c, 1), (1, t) : (c, 1) = (1, 1), (1, t)^2 = (1, 1), (1, t^{-1})(c, 1)(1, t) = (c^{-1}, 1)}$ for which there is an obvious isomorphism to $\generate{c, t : c^n = 1, t^2 = 1, t^{-1} c t = c^{-1}}$.
+Another way view dihedral groups is the semi-direct product of $C_n \rtimes_\varphi C_2$ where $C_n$ denotes the cyclic group of order $n$ and $\varphi : C_2 \to Aut(C_n)$ is the map that sends $1_{C_2}$ to the identity automorphism and $C_2$'s other element to the automorphism $c \mapsto c^{-1}$. From this view, we have some element $(c, 1) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_n$ and another element $(1, t) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_2$. Furthermore, $(1, t)$ has the desired conjugation action on $(c, 1)$, i.e. $(c,1)^{(1,t)} = (c^{-1}, 1)$. Finally, we note that $(c, 1)$ and $(1, t)$ comprise a complete set of generators for $C_n \rtimes_\varphi C_2$. Then 
+\begin{align*}
+C_n \rtimes_\varphi C_2 = \generate{(c, 1), (1, t) :  &(c, 1) = (1, 1), \\
+&(1, t)^2 = (1, 1), \\
+&(1, t^{-1})(c, 1)(1, t) = (c^{-1}, 1)}
+\end{align*}
+for which there is an obvious isomorphism to $\generate{c, t : c^n = 1, t^2 = 1, t^{-1} c t = c^{-1}}$.
 
 \hss
 
@@ -119,7 +125,9 @@ It is possible to extend the notion of a dihedral group by relaxing the cyclic c
 A \emph{generalized dihedral group} is a group $G$ with an abelian subgroup $B$ of index 2 such that $G - B$ contains only involutions.
 \end{definition}
 
-This class of groups shares a similar conjugacy class structure with the usual dihedral groups.
+As in the case of dihedral groups, we may view $G$ under a semi-direct product construction where $G = B \rtimes_\varphi C_2$ where $B$ is an abelian group, $C_2$ is the cyclic group of order 2, and $\varphi$ sends the non-identity element of $C_2$ to the inverse map ($b \mapsto b^{-1}$). 
+
+It is not suprising then that this class of groups shares a similar conjugacy class structure with the usual dihedral groups in certain cases.
 
 \begin{proposition}
 If $G$ is generalized dihedral of order $2n$ with odd $n$, then $G$ has a single conjugacy class of involutions.
@@ -129,6 +137,6 @@ If $G$ is generalized dihedral of order $2n$ with odd $n$, then $G$ has a single
 This follows immediately from the Sylow conjugacy theorem.
 \end{proof}
 
-We cannot say much about the conjugacy classes of involutions if $n$ is even. Consider the direct product of 3 cyclic groups of order 2: $C_2 \times C_2 \times C_2$. This group satisfies the conditions of generalized dihedral groups but is abelian and every element is an involution! Thus, every conjugacy class consists of only a single element.
+We cannot, however, say much about the conjugacy classes of involutions if $n$ is even. Consider the direct product of 3 cyclic groups of order 2: $C_2 \times C_2 \times C_2$. This group satisfies the conditions of generalized dihedral groups but is abelian and every element is an involution! Thus, every conjugacy class consists of only a single element. 
 
 \end{document}
