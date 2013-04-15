@@ -1,0 +1,81 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section{Group Actions}
+
+We will need a few properties of group actions in later results. Here we present the required background.
+
+\begin{definition}
+Let $G$ be a group and $\Omega$ be a set. A \emph{group action} of $G$ on $\Omega$ is a mapping from $\Omega \times G$ to $\Omega$ that satisfies:
+\begin{align*}
+\alpha \cdot 1 &= \alpha &\text{(identity)} \\
+(\alpha \cdot g) \cdot h &= \alpha \cdot (gh) &\text{(associative)}
+\end{align*}
+for $\alpha \in \Omega$ and $g, h \in G$.
+\end{definition}
+
+For a simple example, let $\Omega = G$ and define $\alpha \cdot g = \alpha g$. Then $\alpha \cdot 1 = \alpha 1 = \alpha$ and $(\alpha \cdot g) \cdot h = \alpha g h = \alpha \cdot (gh)$ and so $G$ acts on itself by right multiplication. Conjugation gives a more interesting example. Again take $\Omega = G$ but let $\alpha \cdot g = \alpha^g$. Now, $\alpha \cdot 1 = \alpha^1 = \alpha$ and $(\alpha \cdot g) \cdot h = (\alpha^g)^h = \alpha^{gh} = \alpha \cdot (gh)$.
+
+To extend this example, let us introduce the concept of an orbit.
+
+\begin{definition}
+The \emph{orbit} of $\alpha \in \Omega$ is the set:
+$$\mathcal{O}_\alpha = \{ \beta \in \Omega : \alpha \cdot g = \beta \text{ for some } g \in G \}$$
+\end{definition}
+
+Orbits partition $\Omega$ into distinct classes. This is easily seen by analyzing the implied relation: $\alpha \sim \beta$ iff $\exists g \in G : \alpha \cdot g = \beta$. A few quick calculations shows it to be an equivalence relation:
+\begin{align*}
+&\alpha \cdot 1 = \alpha &\text{(reflexive)} \\
+&\text{if } \alpha \cdot g = \beta \text{, then } \beta \cdot g^{-1} = \alpha &\text{(symmetric)} \\
+&\text{if } \alpha \cdot g = \beta \text{ and } \beta \cdot h = \gamma \text{, then } \alpha \cdot gh = \gamma  &\text{(transitive)}
+\end{align*}
+where $\alpha, \beta, \gamma \in \Omega$ and $g, h \in G$.
+
+For the conjugation action discussed above, orbits are conjugacy classes. That is:
+$$\mathcal{O}_g = g^G = \{h \in G : g^{g_1} = h \text{ for some } g_1 \in G \} \text{.}$$
+ Using properties of orbits, we can easily determine the size of conjugacy classes. This calculation involves the notion of a \emph{stabilizer}.
+
+\begin{definition}
+The \emph{stabilizer} of $\alpha \in \Omega$ is the group 
+$$G_\alpha = \{g \in G : \alpha \cdot g = \alpha \} \text{.}$$
+\end{definition}
+
+It should be clear that $G_\alpha \le G$: if $\alpha \cdot g = \alpha$ and $\alpha \cdot h = \alpha$ then $\alpha \cdot gh = (\alpha \cdot g) \cdot h = \alpha$. For the conjugation action mentioned above, the stabilizer of $g \in G$ is exactly $C_G(g)$, the centralizer of $g$. To see this, let $h \in G_g$. Then $g \cdot h = h^{-1} g h = g$ iff $gh = hg$ and so $h \in C_G(g)$. The same argument suffices to prove $h \in C_G(g)$ implies $h \in G_g$. Then $G_g = C_G(g)$ for the conjugation of $G$ on itself.
+
+We now determine the size of orbits and conjugacy classes.
+
+\begin{theorem}[The Fundamental Counting Principle, p.5]
+Let $H = G_\alpha$ and $\Lambda = \{H x : x \in G\}$. There exists a bijection $\theta : \Lambda \to \mathcal{O}_\alpha$ such that $\theta(H x) = \alpha \cdot x$. In particular,
+$|\mathcal{O}_\alpha| = |G : H|$.
+\end{theorem}
+
+\begin{proof}
+We first show that if $H x = H y$, then $\alpha \cdot x = \alpha \cdot y$. Since $y \in Hx$, $y = h x$ for some $h \in H$. Then:
+$$\alpha \cdot y = \alpha \cdot h x = (\alpha \cdot h) \cdot x = \alpha \cdot x$$
+where the final equality holds because $H$ is the stabilizer of $\alpha$. This shows that each coset of $H$ sends $\alpha$ to exactly one element of $\mathcal{O}_\alpha$.
+
+Then we can define the map $\theta: \Lambda \to \mathcal{O}_\alpha$ by $\theta(H x) = \alpha \cdot x$. Since every element of $G$ lies in some coset of $H$, it follows from the definition of an orbit that $\theta$ is surjective. This leaves injectivity. Suppose $\theta(H x) = \theta(H y)$. Then:
+$$ \alpha = (\alpha \cdot x ) \cdot x^{-1} = (\alpha \cdot y) \cdot x^{-1} = \alpha \cdot y x^{-1} \text{.}$$
+Then $y x^{-1} \in H$ and so $y \in Hx$. It follows that $\theta$ is injective and, therefore, is a bijection. The size of $\mathcal{O}_\alpha$ is then equal to the number of cosets of $H$, i.e. $\mathcal{O}_\alpha = |G : H|$.
+
+\end{proof}
+
+Immediately, we have:
+
+\begin{corollary}
+The size of a conjugacy class $g^G$ is $|G : C_G(g)|$.
+\end{corollary}
+
+
+\subsection{Transitive Actions}
+
+Transitive actions have the special property that they produce exactly one orbit.
+
+\begin{definition}
+Let $G$ be a group acting on the set $\Omega$. We call this a \emph{transitive action} iff it has exactly one orbit.
+\end{definition}
+
+An easy transitive action is to let a group $G$ act on itself by right multiplication. Take $g \in G$. Then for any $h_1 \in G$ there is an $h_2 \in g$ such that $g h_2 = h_1$. Then all elements of $G$ are in $\mathcal{O}_g$ and the right multiplication action is transitive.
+
+\end{document}

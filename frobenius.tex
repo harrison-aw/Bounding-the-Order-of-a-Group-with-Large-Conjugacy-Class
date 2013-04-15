@@ -1,0 +1,21 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section{Frobenius Groups}
+
+Frobenius groups will play an important role in the main results of this thesis. We present the required background here.
+
+\begin{definition}
+Let $G$ be a group and $N$ be a normal subgroup of $G$ with complement $A$. $G$ is a \emph{Frobenius group} iff $n^a \ne n$ for non-identity elements $n \in N$ and $a \in A$.
+\end{definition}
+
+\begin{lemma}
+If $G$ is Frobenius normal subgroup $N$ with complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
+\end{lemma}
+
+\begin{proof}
+Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
+\end{proof}
+
+\end{document}
