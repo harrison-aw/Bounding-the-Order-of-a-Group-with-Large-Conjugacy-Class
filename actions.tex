@@ -9,8 +9,8 @@ We will need a few properties of group actions in later results. Here we present
 \begin{definition}
 Let $G$ be a group and $\Omega$ be a set. A \emph{group action} of $G$ on $\Omega$ is a mapping from $\Omega \times G$ to $\Omega$ that satisfies:
 \begin{align*}
-\alpha \cdot 1 &= \alpha &\text{(identity)} \\
-(\alpha \cdot g) \cdot h &= \alpha \cdot (gh) &\text{(associative)}
+\alpha \cdot 1 &= \alpha \\
+(\alpha \cdot g) \cdot h &= \alpha \cdot (gh) \\
 \end{align*}
 for $\alpha \in \Omega$ and $g, h \in G$.
 \end{definition}
@@ -24,7 +24,7 @@ The \emph{orbit} of $\alpha \in \Omega$ is the set:
 $$\mathcal{O}_\alpha = \{ \beta \in \Omega : \alpha \cdot g = \beta \text{ for some } g \in G \}$$
 \end{definition}
 
-Orbits partition $\Omega$ into distinct classes. This is easily seen by analyzing the implied relation: $\alpha \sim \beta$ iff $\exists g \in G : \alpha \cdot g = \beta$. A few quick calculations shows it to be an equivalence relation:
+Orbits partition $\Omega$ into distinct classes. This is show by analyzing the implied relation: $\alpha \sim \beta$ iff $\exists g \in G : \alpha \cdot g = \beta$. A few quick calculations show it to be an equivalence relation:
 \begin{align*}
 &\alpha \cdot 1 = \alpha &\text{(reflexive)} \\
 &\text{if } \alpha \cdot g = \beta \text{, then } \beta \cdot g^{-1} = \alpha &\text{(symmetric)} \\
@@ -75,6 +75,8 @@ Transitive actions have the special property that they produce exactly one orbit
 \begin{definition}
 Let $G$ be a group acting on the set $\Omega$. We call this a \emph{transitive action} iff it has exactly one orbit.
 \end{definition}
+
+Equivalently, transitive actions are those that, for all $\alpha, \beta \in \Omega$, there exists a $g \in G$ such that $ \alpha \cdot g = \beta$.
 
 An easy transitive action is to let a group $G$ act on itself by right multiplication. Take $g \in G$. Then for any $h_1 \in G$ there is an $h_2 \in g$ such that $g h_2 = h_1$. Then all elements of $G$ are in $\mathcal{O}_g$ and the right multiplication action is transitive.
 
