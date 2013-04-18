@@ -4,7 +4,89 @@
 
 \section{The Relative Parameter}
 
-In this section, we consider a generalization of the parameter $e$. We call this new parameter
+In this section, we consider a generalization of the parameter $e$ that incorporates a normal subgroup. For $x \in G$ and $N \normal G$, let $c_N(x) = |C_G(x):C_N(x)|$ and $k_N(x) = |G:NC_G(x)|$. We then define $e_N$, the relative parameter, as follows:
+$$e_N = min\{(c_N(x) - 1) \cdot \sqrt{k_N(x)} : x \in G\}\text{.}$$
+If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our original $e$. Before we analyze $e_N$, we introduce a definition used by J. Britnell and M. Wildon.
 
+\hss
+
+\begin{definition}
+Let $G$ be a finite group and $N \normal G$. A conjugacy class $x^G$ of $G$ is \emph{non-split} if $x^G = x^N$.
+\end{definition}
+
+\hss
+
+The following lemma establishes a useful result regarding the behavoir of $c_N(x)$ and $k_N(x)$.
+
+\begin{lemma}\label{kn1}
+Let $G$ be a finite group with normal subgroup $N$. For $x \in G$, $c_N(x)$ and $k_N(x)$ are positive integers. The conjugacy class of $x$ is non-split if and only if $k_N(x) = 1$.
+\end{lemma}
+
+\begin{proof}
+The first part of the lemma follows direction from the fact that both $c_N(x)$ and $k_N(x)$ are indices of finite groups.
+
+For the next part, consider $|NC_G(x)|$. It satisfies the following identity:
+$$|NC_G(x)| = \frac{|N| \cdot |C_G(x)|}{|C_N(x)|}\text{.}$$
+
+Now suppose $k_N(x) = 1$. Then
+\begin{align*}
+1 = k_N(x) &= |G : NC_G(x)| \\
+&= |G| \cdot \frac{|C_N(x)|}{|N| \cdot |C_G(x)|} \\
+&= \frac{|G : C_G(x)|}{|N : C_N(x)|}
+\end{align*}
+We may infer that $|x^G| = |x^N|$. But, since $x^N \subseteq x^G$, it must be the case that $x^N = x^G$ and thus $x^G$ is non-split.
+\end{proof}
+
+\subsection{Analysis of $e_N$}
+
+We first note that it is possible for $e_N$ to equal zero because $c_N(x)$ can equal one. Also, given the lower bounds on $c_N$ and $k_N$, we have that $e_N \ge 0$. This brings us to our first result:
+
+\begin{theorem}\label{en0}
+Let $G$ be a finite gorup with normal subgroup $N$. The parameter $e_N$ is zero if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers.
+\end{theorem}
+
+\begin{proof}
+Suppose $e_N = 0$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = 0$. Since $k_N(x) \ge 1$, we must have $c_N(x) = 1$. Then $C_G(x) = C_N(x)$ and $C_G(x) \le N$. Reversing this chain of logic gives the converse.
+\end{proof}
+
+Along this same line of inquiry, we consider the $e_N = 1$ case and then generalize to the case where $e_N$ is prime.
+
+\begin{theorem}\label{en1}
+The parameter $e_N$ equals one if and only if $|G:N| = 2$ and $x^G$ is non-split.
+\end{theorem}
+
+\begin{proof}
+Suppose $e_N = 1$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = 1$. Because $c_N(x) - 1$ is always an integer and $k_N(x) \ge 1$, it must follow that $c_N(x) = 2$ and $k_N(x) = 1$. By Lemma \ref{kn1} then, $x^G$ is non-split. Also, we have $|G : N| = |C_G(x) : C_N(x)| = 2$ since
+\begin{align*}
+1 = k_N(x) &= |G : NC_G(x)| \\
+&= \frac{|G : N|}{|C_G(x) : C_N(x)|} \text{.}
+\end{align*}
+
+Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We may infer then that $|G : N| = |C_G(x) : C_N(x)| = c_N(x)$. Thus, $e_N = 1$. 
+\end{proof}
+
+\begin{theorem}
+If $e_N = p$ for a prime $p$, then either:
+\begin{enumerate}
+	\item $|G:N| = p + 1$ and some conjugacy class $x^G$ of $G$ is non-split
+	\item[(2)] $|G:N| = 2p^2$ and some conjugacy class $x^G$ of $G$ is split
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let $e_N = p$. There exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = p$. Since $c_N(x) - 1$ is an integer and $k_N(x) \ge 1$, both $c_N(x) - 1$ and $\sqrt{k_N(x)}$ must divide $p$. Then either
+\begin{enumerate}
+	\item $c_N(x) = p + 1$ and $k_N(x) = 1$ or
+	\item $c_N(x) = 2$ and $k_N(x) = p^2$
+\end{enumerate}
+
+\subsubsection*{Case 1} Suppose $c_N(x) = p + 1$ and $k_N(x) = 1$. By Lemma \ref{kn1}, $x^G = x^N$. All that remains to be shown is the index of $N$ in $G$. We have
+$$k_N(x) = \frac{|G : N|}{|C_G(x):C_N(x)|} = \frac{|G : N|}{p + 1} = 1\text{.}$$
+Then $|G:N| = p+1$.
+
+\subsubsection*{Case 2} Suppose $c_N(x) = 2$ and $k_N(x) = p^2$. Consider $k_N(x)$:
+$$k_N(x) = \frac{|G:N|}{c_N(x)}\text{.}$$
+Then $|G:N| = k_N(x) \cdot c_N(x) = 2p^2$. Also, since $k_N(x) > 1$, $x^G \ne x^N$ and $x^G$ is split.
+\end{proof}
 
 \end{document}
