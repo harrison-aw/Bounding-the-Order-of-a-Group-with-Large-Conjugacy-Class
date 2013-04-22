@@ -4,18 +4,53 @@
 
 \section{Frobenius Groups}
 
-Frobenius groups will play an important role in the main results of this thesis. We present the required background here.
+Frobenius groups will play an important role in the results of this thesis. We present the required background here.
+
+\hss
 
 \begin{definition}
-Let $G$ be a group and $N$ be a normal subgroup of $G$ with complement $A$. $G$ is a \emph{Frobenius group} iff $n^a \ne n$ for non-identity elements $n \in N$ and $a \in A$.
+Let $G$ be a group and $N$ be a normal subgroup of $G$ with complement $A$. The group $G$ is a \emph{Frobenius group} if and only if $n^a \ne n$ for non-identity elements $n \in N$ and $a \in A$.
 \end{definition}
 
+\hss
+
+An important example, for our purposes, will be the ``odd-order'' dihedral groups, that is, dihedral groups of order $2n$ for odd $n$. We may view a dihedral group $D$ as the semi-direct product of $C_n$ and $C_2$ (where $C_n$ is the cyclic group of order $n$) via the homomorphism $\varphi: C_2 \to Aut(C_n)$ that sends the non-identity element of $C_2$ to the inverse map:
+\[
+    \varphi(c)=
+    \begin{cases}
+        n \mapsto n, & \text{if $c$ is the identity} \\
+        n \mapsto n^{-1}, & \text{otherwise.}
+    \end{cases}
+\]
+Then $D = C_n \rtimes_{\varphi} C_2$ and we identify $N = C_n$ and $A = C_2$. We see immediately that $A$ must be a complement for $N$ in this semi-direct product. We need only verify that $A$ has the proper action on $N$ via conjugation. Let $a \in A$ be the non-identity element. Then $a$ is an involution such that $n^a = n^{-1}$ for all $n \in N$. Since $N$ is an odd order cyclic group, $n = n^{-1}$ if and only if $n = 1$. Then $n^a \ne n$ for all non-identity elements of $N$. The odd-order dihedral groups are then Frobenius groups.
+
+Similarly, if $B$ is an odd-order abelian group, then the group $G = B \rtimes_\psi C_2$ (where $\psi: C_2 \to Aut(B)$ sends the identity element to the inverse map) is a generalized dihedral group and is also Frobenius.
+
+\subsection{Frobenius Kernels and Complements}
+
 \begin{lemma}
-If $G$ is Frobenius normal subgroup $N$ with complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
+If $G$ is Frobenius with normal subgroup $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
 \end{lemma}
 
 \begin{proof}
 Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
+\end{proof}
+
+There are a number of important relationships between kernels and complements in Frobenius groups. One of the most immediate is also rather useful:
+
+\begin{theorem}
+Let $G$ be a finite group and $N$ be a normal subgroup with complement $A$. The following are equivalent:
+\begin{enumerate}
+	\item $G$ is Frobenius.
+	\item $C_G(a) \subseteq A$ for all non-identity elements $a \in A$.
+	\item $C_G(n) \subseteq N$ for all non-identity elements $n \in N$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Suppose $G$ is Frobenius. Then $n^a \ne n$ for all non-identity $n \in N$ and $a \in A$. It follows that no element of $A$ centralizes any element of $N$ and \emph{vice versa}.
+
+Let $C_G(a) \subseteq A$ for all non-identity elements $a \in A$. Then if $xa = ax$ for all $x \in G$
 \end{proof}
 
 \end{document}
