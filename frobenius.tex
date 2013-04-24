@@ -28,15 +28,17 @@ Similarly, if $B$ is an odd-order abelian group, then the group $G = B \rtimes_\
 
 \subsection{Frobenius Kernels and Complements}
 
-\begin{lemma}
-If $G$ is Frobenius with normal subgroup $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
+There are a number of important relationships between kernels and complements in Frobenius groups. Before we begin that analysis, we take a closer look at Frobenis complements.
+
+\begin{lemma}\label{complementconjugatesdisjoint}
+If $G$ is a Frobenius group with kernel $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
 \end{lemma}
 
 \begin{proof}
 Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
 \end{proof}
 
-There are a number of important relationships between kernels and complements in Frobenius groups. One of the most immediate is also rather useful:
+With this, we can obtain an easy yet useful result:
 
 \begin{theorem}
 Let $G$ be a finite group and $N$ be a normal subgroup with complement $A$. The following are equivalent:
@@ -48,7 +50,7 @@ Let $G$ be a finite group and $N$ be a normal subgroup with complement $A$. The 
 \end{theorem}
 
 \begin{proof}
-Suppose $G$ is Frobenius. Then $n^a \ne n$ for all non-identity $n \in N$ and $a \in A$. It follows that no element of $A$ centralizes any element of $N$ and \emph{vice versa}.
+Suppose $G$ is Frobenius. Let $x \in C_G(a)$ for some non-identity $a \in A$. Then $x \in A \cap A^x$. We must have that $A \cap A^x > 1$. If $x = 1$, then $A = A^x$ and, if $x \ne 1$, Lemma \ref{complementconjugatesdisjoint} gives that $x \in A$ lest $A \cap A^x = 1$. In either case, $C_G(a) \subseteq A$ for all non-identity elements $a \in A$.
 
 Let $C_G(a) \subseteq A$ for all non-identity elements $a \in A$. Then if $xa = ax$ for all $x \in G$
 \end{proof}
