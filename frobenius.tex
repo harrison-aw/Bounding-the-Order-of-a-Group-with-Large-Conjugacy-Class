@@ -34,7 +34,7 @@ Let $G$ be a Frobenius group with kernel $N$ and complement $A$. Then $|N| \equi
 Consider the $A$-orbits of $N$. By the Orbit-Stabilizer theorem, $|\mathcal{O}_n| = |A : C_A(n)|$ for all $n \in N$. But, $n^a \ne n$ for non-identity elements $n \in N$ and so $C_A(n) = 1$ unless $n = 1$. Exactly one orbit of $N$ is then of size $1$ and all others are of size $|A|$. We conclude that $|N| = 1 + k |A|$ for some positive integer $k$ and thus $|N| \equiv 1 \pmod{|A|}$.
 \end{proof}
 
-\begin{lemma}\label{complementconjugatesdisjoint}
+\begin{lemma}\label{frobeniusdisjoint}
 If $G$ is a Frobenius group with kernel $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
 \end{lemma}
 
@@ -52,7 +52,7 @@ Other properties can be found in <cite> for the interested reader. We now turn o
 
 Frobenius groups are \emph{transitive permutation groups} with the special property that only the identity fixes more than one letter but the subgroup fixing a letter is non-trivial. To see this, consider the right multiplication action of a Frobenius group $G$ on the cosets of its Frobenius complement $A$. We note that $G$ permutes the the set $\{Ag : g \in G \}$ and that the action is transitive. Hence, $G$ is a transitive permutation group via <cite>.
 
-The more interesting properties are that each subgroup fixing a coset is non-trivial yet only the identity fixes more than one coset. We know that the subgroup $A^g$ of $G$ fixes the coset $Ag$ of $A$ for $g \in G$. This gives the former property. For the latter, the bulk of the work has already been done in Lemma \ref{complementconjugatesdisjoint}. If $x \in G$ fixes $A$ and $Ag$, then $x \in A \cap A^g = 1$.
+The more interesting properties are that each subgroup fixing a coset is non-trivial yet only the identity fixes more than one coset. We know that the subgroup $A^g$ of $G$ fixes the coset $Ag$ of $A$ for $g \in G$. This gives the former property. For the latter, the bulk of the work has already been done in Lemma \ref{frobeniusdisjoint}. If $x \in G$ fixes $A$ and $Ag$, then $x \in A \cap A^g = 1$.
 
 Now, consider the elements not fixing any cosets of $A$. This set is:
 $$X = G - \bigcup_{g \in G} A^g\text{.}$$
@@ -66,7 +66,13 @@ is a normal subgroup of order $|G : A|$.
 
 Unfortunately, no character free proof of this result has been discovered. The proof has been omitted here as the background material would significantly lengthen this thesis. For the motivated reader, one may consult Isaac's \emph{Algebra: A Graduate Course} <cite> for a chapter devoted to reaching this result as quickly as possible.
 
-Moving on, we use this result to prove some other relevant characterizations.
+An useful corollary is this:
+
+\begin{corollary}\label{frobeniuscorollary}
+Let $G$ be a Frobenius group with kernel $N$ and complement $A$. If $g \in G - N$, then $g$ is contained in some conjugate of $A$.
+\end{corollary}
+
+Moving on, we use these results to prove some other relevant characterizations.
 
 \hss
 
@@ -83,9 +89,32 @@ Let $G$ be a finite group and $N$ be a normal subgroup complemented by $A$. The 
 \end{enumerate}
 \end{lemma}
 
+\begin{proof}
+We will show that (1) is equivalent to (2) and then that (3) is equivalent to (1).
+
+Suppose that $G$ is Frobenius. Let $a \in A$ be a non-identity element and take $x \in C_G(a)$. Then $a \in A \cap A^x$. Since the intersection is non-trivial, $x \in A$ and (2) holds.
+
+Now, assume (2) and we show (1). Let $a \in A$ be a non-identity element. Then:
+$$C_N(a) = N \cap C_G(a) \subseteq N \cap A = 1$$
+where the subset relation holds by (2) and the final equality holds because $A$ is a complement of $N$.
+
+Again, suppose $G$ is Frobenius. Let $n \in N$ be a non-identity elment. Assume that $C_G(n) \not\subseteq N$. By Corollary \ref{frobeniuscorollary}, $a^g \in C_G(n)$ for some non-identity $a \in A$ and $g \in G$. If $m = n^{g^{-1}}$, then $a \in C_G(m)$. Since $N$ is normal, $m \in N$ and, because $G$ is Frobenius, we must have $m=1$. But then $n = 1$ --- a contradiction. Therefore, $C_G(n) \le N$.
+
+Finally, we prove (1) from (3). Let $n \in N$ be a non-identity element. Then
+$$C_A(n) = A \cap C_G(n) \subseteq A \cap N = 1$$
+wehre the subeset relation holds by (3) and the latter equality because $A$ complements $N$. Thus, $G$ is Frobenius.
+\end{proof}
 
 \begin{lemma}\label{frobeniusnormalizer}
-Let $A$ be a non-trivial subgroup of $G$. Then $G$ is Frobenius with complement $A$ if and only if $A$ is disjoint from its conjugates and $H$ is its own normalizer.
+Let $A$ be a non-trivial subgroup of $G$. Then $G$ is Frobenius with complement $A$ if and only if $A$ is intersects its conjugates trivially and is its own normalizer.
 \end{lemma}
+
+\begin{proof}
+Let $G$ be Frobenius with complement $A$. By Lemma \ref{frobeniusdisjoint}, we know that $A \cap A^g = 1$ for all $g \in G - A$.
+
+Suppose $A \cap A^g = 1$ for all $g \in G - A$. Then $C_G(a) \le A$ for all non-identity $a \in A$.  According to Lemma \ref{frobeniuscentralizers}, this is equivalent to the statement that $G$ is Frobenius.
+
+All that remains to be shown is that $A$ is self-normalizing. Let $x \in N_G(A)$. Then $A \cap A^x = A$. Lemma \ref{frobeniusdisjoint} gives that $x \in A$. It follows that $N_G(A) = A$ and this completes the proof.
+\end{proof}
 
 \end{document}
