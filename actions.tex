@@ -6,14 +6,18 @@
 
 We will need a few properties of group actions in later results. Here we present the required background.
 
+\hss
+
 \begin{definition}
 Let $G$ be a group and $\Omega$ be a set. A \emph{group action} of $G$ on $\Omega$ is a mapping from $\Omega \times G$ to $\Omega$ that satisfies:
 \begin{align*}
 \alpha \cdot 1 &= \alpha \\
-(\alpha \cdot g) \cdot h &= \alpha \cdot (gh) \\
+(\alpha \cdot g) \cdot h &= \alpha \cdot (gh)
 \end{align*}
 for $\alpha \in \Omega$ and $g, h \in G$.
 \end{definition}
+
+\hss
 
 For a simple example, let $\Omega = G$ and define $\alpha \cdot g = \alpha g$. Then $\alpha \cdot 1 = \alpha 1 = \alpha$ and $(\alpha \cdot g) \cdot h = \alpha g h = \alpha \cdot (gh)$ and so $G$ acts on itself by right multiplication. Conjugation gives a more interesting example. Again take $\Omega = G$ but let $\alpha \cdot g = \alpha^g$. Now, $\alpha \cdot 1 = \alpha^1 = \alpha$ and $(\alpha \cdot g) \cdot h = (\alpha^g)^h = \alpha^{gh} = \alpha \cdot (gh)$.
 
@@ -75,10 +79,9 @@ Immediately, we have:
 The size of a conjugacy class $g^G$ is $|G : C_G(g)|$.
 \end{corollary}
 
+\hss
 
 \subsection{Transitive Actions}
-
-Transitive actions have the special property that they produce exactly one orbit.
 
 \hss
 
@@ -93,13 +96,5 @@ Equivalently, transitive actions are those that, for all pairs $\alpha, \beta \i
 An easy transitive action is to let a group $G$ act on itself by right multiplication. Take $g \in G$. Then for any $h_1 \in G$ there is an $h_2 \in g$ such that $g h_2 = h_1$. Then all elements of $G$ are in $\mathcal{O}_g$ and the right multiplication action is transitive.
 
 Another example, to build off previous material, is to take $G$ to be a generalized dihedral group such that $|G| = 2n$ with $n$ odd. Then $G$ acts transitively on its involutions.
-
-\begin{lemma}
-Let $G$ be a finite group and $H$ be a cyclic subgroup of prime order $p$ such that $C_G(h) \le H$ for all non-identity $h \in H$. If $x \in N_G(H) - H$ and $|x| \ge p$, then $\generate{x}$ acts transitively via conjugation on the non-identity elements of $H$.
-\end{lemma}
-
-\begin{proof}
-Let $\generate{h} = H$ and consider $h^x$. We must have $h^x = h^n$ for some integer $1 < n < p$. Then $h^{x^k} = h^{n^k}$ where $h^{n^k} = h^{n^k \bmod p}$. But then the orbit $\mathcal{O}_h = \{h^1, ... , h^{p-1} \}$ is precisely the non-identity elements of $H$. Thus, $\generate{x}$ acts transitively.
-\end{proof}
 
 \end{document}

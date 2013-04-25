@@ -10,9 +10,13 @@ Dihedral groups will play an important role in later results. While some familia
 
 We begin with our definition:
 
+\hss
+
 \begin{definition}
 A \emph{dihedral group} is a group $D$ having a cyclic subgroup $C$ of index 2 such that $D - C$ contains only elements of order 2.
 \end{definition}
+
+\hss
 
 \begin{remark}
 Both the cyclic subgroup of order 2 and the Klein 4-group are dihedral. For the former, take $C = 1$. In the latter, all non-identity elements are involutions and any subgroup of order 2 will suffice for $C$.
@@ -36,9 +40,9 @@ for which there is an obvious isomorphism to $\generate{c, t : c^n = 1, t^2 = 1,
 
 While not strictly necessary for our results, we will frequently make use of the fact that, up to isomorphism, there is exactly one dihedral group of a given order.
 
-\begin{theorem}
+\begin{proposition}
 All dihedral groups of order $2n$ are isomorphic.
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
 Let $D_0$ and $D$ be dihedral groups of order $2n$. We seek an isomorphism $\varphi: D_0 \to D$. Let $D_0 = \langle c_0, t_0 \rangle$ and $D = \langle c, t \rangle$ such that $|c_0| = |c| = n$ and $|t| = |t_0| = 2$. Define $\varphi(c_0^k t_0^m) = c^k t^m$ for $0 \le k < n$ and $0 \le m < 2$. Then $\varphi(c_0) = c$ and $\varphi(t_0) = t$ and we get:
@@ -46,7 +50,11 @@ $$\varphi(c_0^k t_0^m) = c^k t^m = \varphi(c_0)^k \varphi(t)^m \text{.}$$
 Thus $\varphi$ is a homomorphism. Because every $d \in D$ can be written $d = c^k t^m$ with $0 \le k < n$, $0 \le m < 2$ and that $\varphi(c_0^k t_0^m) = c^k t^m$,  $\varphi$ is surjective. To show injectivity, suppose $\varphi(c_0^k t_0^m) = \varphi(c_0^l t_0^r)$ for $0 \le k, l < n$ and $0 \le m, r < 2$. Then $c^k t^m = c^l t^r$ which implies that $l \equiv k \pmod n$ and $r \equiv m \pmod 2$. By the bounds imposed on $k$, $m$, $l$, and $r$, we must have $k = l$ and $m = r$.  Then $c_0^k t_0^m = c_0^l t_0^r$. We conclude that $\varphi$ is an isormorphism and the proof is complete.
 \end{proof}
 
+\hss
+
 \subsection{Conjugacy Classes}
+
+\hss
 
 We now discuss the conjugacy class structure of dihedral groups. The number and sizes of conjugacy classes is completely determined by the order of a dihedral group. In following propositions, let $D$ be a dihedral group and $C \normal D$ be cyclic of index 2.
 
@@ -93,8 +101,11 @@ Let $D$ have order $2n$, $n$ odd. Then $D$ has exactly one class of involutions 
 Each involution of $D$ generates a Sylow 2-subgroup of order 2. All of these are distinct and must be conjugate. Then all involutions of $D$ are in the same conjugacy class.
 \end{proof}
 
+\hss
 
 \subsection{Factor Groups}
+
+\hss
 
 We will show that dihedral groups have the property that every factor group is dihedral. Before we get to this, let us discuss the normal subgroups of dihedral groups.
 
@@ -117,13 +128,21 @@ Let $N \le C$. Let $\bar{ \cdot }$ denote the canonical mapping of $D \mapsto D/
 
 \end{proof}
 
+\hss
+
 \subsection{Generalized Dihedral Groups}
 
+\hss
+
 It is possible to extend the notion of a dihedral group by relaxing the cyclic condition on the subgroup of index 2.
+
+\hss
 
 \begin{definition}
 A \emph{generalized dihedral group} is a group $G$ with an abelian subgroup $B$ of index 2 such that $G - B$ contains only involutions.
 \end{definition}
+
+\hss
 
 As in the case of dihedral groups, we may view $G$ under a semi-direct product construction where $G = B \rtimes_\varphi C_2$ where $B$ is an abelian group, $C_2$ is the cyclic group of order 2, and $\varphi$ sends the non-identity element of $C_2$ to the inverse map ($b \mapsto b^{-1}$). 
 
