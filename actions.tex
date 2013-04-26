@@ -21,7 +21,7 @@ for $\alpha \in \Omega$ and $g, h \in G$.
 
 For a simple example, let $\Omega = G$ and define $\alpha \cdot g = \alpha g$. Then $\alpha \cdot 1 = \alpha 1 = \alpha$ and $(\alpha \cdot g) \cdot h = \alpha g h = \alpha \cdot (gh)$ and so $G$ acts on itself by right multiplication. Conjugation gives a more interesting example. Again take $\Omega = G$ but let $\alpha \cdot g = \alpha^g$. Now, $\alpha \cdot 1 = \alpha^1 = \alpha$ and $(\alpha \cdot g) \cdot h = (\alpha^g)^h = \alpha^{gh} = \alpha \cdot (gh)$.
 
-To extend this example, let us introduce the concept of an orbit.
+To extend this idea, let us introduce the concept of an orbit.
 
 \hss
 
@@ -32,7 +32,7 @@ $$\mathcal{O}_\alpha = \{ \beta \in \Omega : \alpha \cdot g = \beta \text{ for s
 
 \hss
 
-Orbits partition $\Omega$ into distinct classes. This is show by analyzing the implied relation: $\alpha \sim \beta$ iff $\exists g \in G : \alpha \cdot g = \beta$. A few quick calculations show it to be an equivalence relation:
+Orbits partition $\Omega$ into distinct classes. This is show by analyzing the implied relation: $\alpha \sim \beta$ if and only if $\exists g \in G : \alpha \cdot g = \beta$. A few quick calculations show it to be an equivalence relation:
 \begin{align*}
 &\alpha \cdot 1 = \alpha &\text{(reflexive)} \\
 &\text{if } \alpha \cdot g = \beta \text{, then } \beta \cdot g^{-1} = \alpha &\text{(symmetric)} \\
@@ -53,11 +53,11 @@ $$G_\alpha = \{g \in G : \alpha \cdot g = \alpha \} \text{.}$$
 
 \hss
 
-It should be clear that $G_\alpha \le G$: if $\alpha \cdot g = \alpha$ and $\alpha \cdot h = \alpha$ then $\alpha \cdot gh = (\alpha \cdot g) \cdot h = \alpha$. For the conjugation action mentioned above, the stabilizer of $g \in G$ is exactly $C_G(g)$, the centralizer of $g$. To see this, let $h \in G_g$. Then $g \cdot h = h^{-1} g h = g$ iff $gh = hg$ and so $h \in C_G(g)$. The same argument suffices to prove $h \in C_G(g)$ implies $h \in G_g$. Then $G_g = C_G(g)$ for the conjugation of $G$ on itself.
+It should be clear that $G_\alpha \le G$: if $\alpha \cdot g = \alpha$ and $\alpha \cdot h = \alpha$ then $\alpha \cdot gh = (\alpha \cdot g) \cdot h = \alpha$. For the conjugation action mentioned above, the stabilizer of $g \in G$ is exactly $C_G(g)$, the centralizer of $g$. To see this, let $h \in G_g$. Then $g \cdot h = h^{-1} g h = g$ if and only if $gh = hg$ and so $h \in C_G(g)$. The same argument suffices to prove $h \in C_G(g)$ implies $h \in G_g$. Then $G_g = C_G(g)$ for the conjugation action of $G$ on itself.
 
 We now determine the size of orbits and conjugacy classes.
 
-\begin{theorem}[The Fundamental Counting Principle, p.5]
+\begin{theorem}[\cite{isaacsfinitegrouptheory}, p.5]
 Let $H = G_\alpha$ and $\Lambda = \{H x : x \in G\}$. There exists a bijection $\theta : \Lambda \to \mathcal{O}_\alpha$ such that $\theta(H x) = \alpha \cdot x$. In particular,
 $|\mathcal{O}_\alpha| = |G : H|$.
 \end{theorem}
@@ -86,7 +86,7 @@ The size of a conjugacy class $g^G$ is $|G : C_G(g)|$.
 \hss
 
 \begin{definition}
-Let $G$ be a group acting on the set $\Omega$. We call this a \emph{transitive action} iff it has exactly one orbit.
+Let $G$ be a group acting on the set $\Omega$. We call this a \emph{transitive action} if and only if it has exactly one orbit.
 \end{definition}
 
 \hss
@@ -95,6 +95,26 @@ Equivalently, transitive actions are those that, for all pairs $\alpha, \beta \i
 
 An easy transitive action is to let a group $G$ act on itself by right multiplication. Take $g \in G$. Then for any $h_1 \in G$ there is an $h_2 \in g$ such that $g h_2 = h_1$. Then all elements of $G$ are in $\mathcal{O}_g$ and the right multiplication action is transitive.
 
-Another example, to build off previous material, is to take $G$ to be a generalized dihedral group such that $|G| = 2n$ with $n$ odd. Then $G$ acts transitively on its involutions.
+Another example, to build on previous material, is to take $G$ to be a generalized dihedral group such that $|G| = 2n$ with $n$ odd. Then $G$ acts transitively on its involutions.
+
+\hss
+
+Later, we will be concerned with groups that permit a transitive action on some finite set. The following proposition may be illustrative.
+
+\begin{theorem}[\cite{gorensteinfinitegroups}, p.34]\label{transitivegroup}
+Let $G$ be a finite group that acts transitively on the finite set $\Omega$. This action is equivalent to one on the right cosets of a subgroup of $G$.
+\end{theorem}
+
+\begin{proof}
+Let $\alpha_0 \in \Omega$ and let $H$ be the stabilizer of $\alpha_0$. We first show that there is a one-to-one correspondence between the cosets of $H$ and the set $\Omega$.
+
+Suppose $\alpha_0 \cdot g_\beta = \beta$ for $\beta \in \Omega$ and $g_\beta \in G$. Then $\alpha_0 \cdot h g_\beta = \beta$ for all $h \in H$. All elements of the coset $H g_\beta$ then send $\alpha_0$ to $\beta$. Now, take $g \in G$ such that $\alpha_0 \cdot g = \beta$. Then $\alpha_0 \cdot g g_\beta^{-1} = \alpha_0$ and $g \in H g_\beta$. We infer that $H g_\beta$ contains all elements of $G$ sending $\alpha_0 $ to $\beta$.
+
+Since each element of $G$ must act on $\alpha_0$ and send it to some $\beta \in \Omega$, the set $\Omega' = \{H g_\beta : \beta \in \Omega\}$ is a complete set of cosets.
+
+Now, we show these actions to be equivalent via the bijection $\Theta: \Omega \to \Omega'$ where $\Theta(\beta) = H g_\beta$ and $\alpha_0 \cdot g_\beta = \beta$. Consider $H g_\beta g = H g_\gamma$ for $\beta, \gamma \in \Omega$. Then
+$$\alpha_0 \cdot g_\beta g = \beta \cdot g = \gamma = \alpha_0 g_\gamma \text{.}$$
+Applying $\Theta$ to the middle equality, $\beta \cdot g = \gamma$, gives $(H g_\beta) g = H g_\gamma$ and we conclude that the actions are equivalent.
+\end{proof}
 
 \end{document}

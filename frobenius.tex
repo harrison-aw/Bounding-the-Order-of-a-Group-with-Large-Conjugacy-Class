@@ -32,7 +32,7 @@ Let $G$ be a Frobenius group with kernel $N$ and complement $A$. Then $|N| \equi
 
 \begin{proof}
 Consider the $A$-orbits of $N$. By the Orbit-Stabilizer theorem, $|\mathcal{O}_n| = |A : C_A(n)|$ for all $n \in N$. But, $n^a \ne n$ for non-identity elements $n \in N$ and so $C_A(n) = 1$ unless $n = 1$. Exactly one orbit of $N$ is then of size $1$ and all others are of size $|A|$. We conclude that $|N| = 1 + k |A|$ for some positive integer $k$ and thus $|N| \equiv 1 \pmod{|A|}$.
-\end{proof}
+\end{proof}s
 
 \begin{lemma}\label{frobeniusdisjoint}
 If $G$ is a Frobenius group with kernel $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
@@ -42,24 +42,29 @@ If $G$ is a Frobenius group with kernel $N$ having complement $A$, then $A \cap 
 Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
 \end{proof}
 
-Other properties can be found in \cite{isaacsfinitegrouptheory}, \cite{gorensteinfinitegroups} for the interested reader. We now turn our attention towards different characterizations of Frobenius groups.
+Other properties can be found in \cite{isaacsfinitegrouptheory}, \cite{gorensteinfinitegroups}, \cite{isaacsalgebra} for the interested reader.
 
 \hss
 
-\subsection{Transitive Permutation Groups}
+\subsection{Frobenius' Theorem}
 
 \hss
 
-Frobenius groups are \emph{transitive permutation groups} with the special property that only the identity fixes more than one letter but the subgroup fixing a letter is non-trivial. To see this, consider the right multiplication action of a Frobenius group $G$ on the cosets of its Frobenius complement $A$. We note that $G$ permutes the the set $\{Ag : g \in G \}$ and that the action is transitive. Hence, $G$ is a transitive permutation group via Lemma cite: Result about transitive permutationg groups.
+Frobenius groups can be viewed as those with a transitive action on a set satisfying the properties that:
+\begin{enumerate}
+	\item its stabilizers are non-trivial.
+	\item only the identity fixes more than one letter.
+\end{enumerate}
+To see this, let $G$ be a Frobenius group with complement $A$ and consider its right multiplication action on the cosets of $A$. We know that this action is transitive, so all that remains to be shown is that it satisfies the aforementioned properties (see Theorem \ref{transitivegroup}).
 
-The more interesting properties are that each subgroup fixing a coset is non-trivial yet only the identity fixes more than one coset. We know that the subgroup $A^g$ of $G$ fixes the coset $Ag$ of $A$ for $g \in G$. This gives the former property. For the latter, the bulk of the work has already been done in Lemma \ref{frobeniusdisjoint}. If $x \in G$ fixes $A$ and $Ag$, then $x \in A \cap A^g = 1$.
+The subgroup $A^g$ of $G$ fixes the coset $Ag$ of $A$, giving the former property. For the latter, the bulk of the work has already been done in Lemma \ref{frobeniusdisjoint}. If $x \in G$ fixes $A$ and $Ag$, then $x \in A \cap A^g = 1$.
 
-Now, consider the elements not fixing any cosets of $A$. This set is:
+Now, consider the elements not fixing any cosets of $A$:
 $$X = G - \bigcup_{g \in G} A^g\text{.}$$
 It turns out that $X \cup {1}$ is exactly the Frobenius kernel of $G$ and is, hence, normal. This is the content of the next theorem:
 
 \begin{theorem}[Frobenius]
-Let $G$ be a Frobenius group which permutes the set $S = \{1,...,n\}$. Let $A$ be the subgroup fixing $1 \in S$. Then the set:
+Let $G$ be a Frobenius group acting on a set $\Omega$. Let $A$ be the subgroup fixing $\alpha_0 \in \Omega$. Then the set:
 $$N = (G - \bigcup_{g \in G} A^g) \cup \{1\}$$
 is a normal subgroup of order $|G : A|$.
 \end{theorem}
