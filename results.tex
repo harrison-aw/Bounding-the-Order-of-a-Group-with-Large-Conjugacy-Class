@@ -41,4 +41,22 @@ Let $e = 1$. Then $c(x) = 2$ and $k(x) = 1$. It must be the case that $|G| = 2$ 
 Now, let $e = 2$. There are two cases. If $c(x) = 3$ and $k(x) = 1$, then $G$ must be $C_3$. Since $C_3$ must have $e = 2$, we need only consider the remaining case. Assume $c(x) = 2$ and $k(x) = 4$. This implies that $|G| = 8$. Since $c(x) < 8$, $G$ cannot be abelian. The only two groups of order 8 that are not abelian are $D_8$ and $Q_8$, the dihedral group of order 8 and quaternion group respectively. Neither of these groups have a self-centralizing involution and thus $G$ can be neither. This completes (3).
 \end{proof}
 
+We will need the following lemma for the next theorem.
+
+\begin{lemma}
+Let $P$ be a group of order $p^2$ for some prime $p$. Then $P$ is abelian.
+\end{lemma}
+
+\begin{proof}
+Let $P$ act on $Z(P)$, the group's center, by conjugation. We know that every element of $Z(P)$ has an orbit of size one under this action and every other orbit must have $p$-power size. Then $P - Z(G)$ is a union of orbits with size divisible by $p$. Thus, $|Z(P)| \equiv 0 \pmod{p}$ and, since, $1 \in Z(P)$, $|Z(P)| \ge p$. 
+
+If $Z(P) = P$, we are done so suppose $|Z(G)| = p$. Then there is an element $x \in P - Z(P)$ and $\generate{x} \cap Z(P) = 1$. Therefore the group $\generate{x}$ is  a complement of $Z(G)$ and $P = Z(G) \rtimes_\varphi \generate{x}$ for some $\varphi \in Aut(Z(P))$. But, for $z \in Z(P)$ we must have $z^x = z$. Then $\varphi$ is the identity and $P = Z(P) \times \generate{x}$. Since both $Z((P))$ and $\generate{x}$ are abelian, we must conclude that $Z(P) = P$.
+\end{proof}
+
+Now, we get to a more sweeping characterization:
+
+\begin{theorem}
+
+\end{theorem}
+
 \end{document}
