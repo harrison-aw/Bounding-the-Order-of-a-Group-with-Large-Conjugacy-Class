@@ -7,16 +7,38 @@
 \hss
 
 \begin{definition}
-Let $G$ be a finite group. For $x \in G$ let $c(x) = |C_G(x)|$ and $k(x) = |G : C_G(x)|$. Then we define the parameter $e$ as follows:
+Let $G$ be a finite group. For $x \in G$ let $c(x) = |C_G(x)|$ and $k(x) = |G : C_G(x)|$. We define the parameter $e$ as follows:
 $$e = min\{(c(x) - 1) \cdot \sqrt{k(x)} : x \in G\}\text{.}$$
 \end{definition}
 
 \hss
 
-This parameter is small for groups with large conjugacy class. To see this, let us define $e$ in an alternate way. Let $G$ be a group. If the set $\{x_i \in G : 1 \le i \le n\}$ is a complete set of representatives of the conjugacy classes of $G$, then:
-$$\sum_{i=1}^{n} |G : C_G(x_i)| = |G|\text{.}$$
-Now, with a cue from Snyder's work, let $d_i = \sqrt{|G : C_G(x_i)}$ for some $1 \le i \le n$. This allows us to have a value that relates conjugacy classes to the group order in a manner similar to character degrees:
-$$\sum_{i=1}^{n} d_i^2 = |G|\text{.}$$
-Once we have this, we may define $e$ in the same manner it was originally introduced: $|G| = d_i(d_i + e)$. Manipulating this equality and requiring $e$ to be minimal verifies that the parameter mentioned at the start of the section is the very same one that we have just explained. With this, it is now clear that small values of $e$ relate to large conjugacy class sizes, that is large $d_i^2$.
+This parameter is small for groups with a large conjugacy class. Let $x \in G$ be such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$. Consider the following:
+\begin{align*}
+e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
+ &= c(x)\frac{k(x)}{\sqrt{k(x)}} - \sqrt{k(x)} \\
+ &= \frac{|G|}{\sqrt{k(x)}} - \sqrt{k(x)}\text{.}
+\end{align*}
+If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. Moreover, if we were to replace our $d$ by the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0,1, or 2.
+
+\begin{theorem}
+Let $G$ be a finite group.
+\begin{enumerate}
+	\item $e = 0$ if and only if $G$ is trivial.
+	\item $e = 1$ if and only if $G$ is $C_2$.
+	\item $e = 2$ if and only if $G$ is $C_3$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For the following, let $x \in G$ be an element such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$.
+
+
+Suppose $e = 0$. Then $c(x) = 1$. Only the trivial group has a trivial centralizer. This is sufficient for (1).
+
+Let $e = 1$. Then $c(x) = 2$ and $k(x) = 1$. It must be the case that $|G| = 2$ and so $G$ is $C_2$. Reversing this argument proves (2).
+
+Now, let $e = 2$. There are two cases. If $c(x) = 3$ and $k(x) = 1$, then $G$ must be $C_3$. Since $C_3$ must have $e = 2$, we need only consider the remaining case. Assume $c(x) = 2$ and $k(x) = 4$. This implies that $|G| = 8$. Since $c(x) < 8$, $G$ cannot be abelian. The only two groups of order 8 that are not abelian are $D_8$ and $Q_8$, the dihedral group of order 8 and quaternion group respectively. Neither of these groups have a self-centralizing involution and thus $G$ can be neither. This completes (3).
+\end{proof}
 
 \end{document}
