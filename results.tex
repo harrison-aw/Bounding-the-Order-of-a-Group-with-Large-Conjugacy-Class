@@ -19,9 +19,9 @@ e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
  &= c(x)\frac{k(x)}{\sqrt{k(x)}} - \sqrt{k(x)} \\
  &= \frac{|G|}{\sqrt{k(x)}} - \sqrt{k(x)}\text{.}
 \end{align*}
-If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. Moreover, if we were to replace our $d$ by the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0,1, or 2.
+If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. Moreover, if we were to replace our $d$ by the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0, 1, or 2.
 
-\begin{theorem}
+\begin{theorem}\label{easycharacterization}
 Let $G$ be a finite group.
 \begin{enumerate}
 	\item $e = 0$ if and only if $G$ is trivial.
@@ -43,7 +43,7 @@ Now, let $e = 2$. There are two cases. If $c(x) = 3$ and $k(x) = 1$, then $G$ mu
 
 We will need the following lemma for the next theorem.
 
-\begin{lemma}
+\begin{lemma}\label{psquared}
 Let $P$ be a group of order $p^2$ for some prime $p$. Then $P$ is abelian.
 \end{lemma}
 
@@ -56,7 +56,83 @@ If $Z(P) = P$, we are done so suppose $|Z(G)| = p$. Then there is an element $x 
 Now, we get to a more sweeping characterization:
 
 \begin{theorem}
-
+Let $G$ be a finite group and $p$ be an odd prime. The group $G$ is abelian of order $p+1$ or generalized dihedral of order $2p^2$ if and only if $e = p$.
 \end{theorem}
+
+\begin{proof}
+Suppose that $G$ is abelian of order $p+1$. Then $c(x) = p+1$ for all $x \in G$. This gives that $k(x) = 1$ for all $x \in G$ and we may conclude that $e = (c(x) - 1) \cdot \sqrt{k(x)} = p$.
+
+For the other case, let $G$ be generalized dihedral of order $2p^2$. Take $t \in G$ to be an involution. Since $G$ is generalized dihedral, the conjugacy class size of $t$ is $p^2$. This conjugacy class is as large as it can be and so corresponds to the minimal value of $e$. Then $e = (c(t) - 1) \cdot \sqrt{k(x)} = \sqrt{k(x)}$. But, $k(x)$ is the size of $t$'s conjugacy class, $p^2$, and so $e = p$.
+
+All that remains is to show that no other classes of groups have such an $e$. Let $e = p$. Then either $c(x) = p+1$ and $k(x) = 1$ or $c(x) = 2$ and $k(x) = p^2$. In the former case, we know that the group is of order $p+1$. Since $e$ is minimal, we know that $c(x)$ is the size of the smallest centralizer. Then every element centralizes every other element and the group must be abelian. In the latter case, we know that the group must be of order $2p^2$ and have a self-centralizing involution. But, this implies that there are $p^2$ involutions in $G$. Furthermore, $G$ must have a Sylow $p$-subgroup, $P$, and it must be disjoint from these involutions as $p$ is odd. Since $P$ has order $p^2$, it must be abelian by Lemma \ref{psquared}. Then $G$ is generalized dihedral.
+\end{proof}
+
+It is also possible to bound the order of a group by $e$. For Snyder's orginal parameter, much work has been done to make a better bound (\cite{isaacsarticle}, \cite{durfeejensenarticle}, \cite{lewisarticle}). In our case, the answer is much easier:
+
+\begin{theorem}\label{ebound}
+Let $G$ be a non-trivial finite group. Then $|G| \le 2e^2$.
+\end{theorem}
+
+\begin{proof}
+We begin with the fact that $k(x) = |G|/c(x)$. This gives the following equation for some $x \in G$:
+\begin{align*}
+e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
+&= \frac{(c(x) - 1)}{\sqrt{c(x)}} \cdot \sqrt{|G|}
+\end{align*}
+If we square this equation we get:
+$$e^2 = \frac{(c(x) - 1)^2}{c(x)} \cdot |G|$$
+from which we may deduce that:
+$$|G| = e^2 \cdot \frac{c(x)}{(c(x) -1)^2}\text{.}$$
+Since $c(x)/(c(x) - 1)^2$ decreases as $c(x)$ increases, we need only look at the minimal value of $c(x)$. Our group $G$ is non-trivial and thus all of its centralizers have at least 2 elements. Then $c(x) \ge 2$. This yields the following inequality:
+$$2e^2 \ge e^2 \cdot \frac{c(x)}{(c(x) - 1)^2} = |G|$$
+which completes the proof.
+\end{proof}
+
+A natural follow-up to this theorem is the question: ``Which groups satisfy the boundary?'' Before we answer this, let us a review the following basic fact:
+
+\begin{lemma}[\cite{isaacsfinitegrouptheory}]
+Let $|G| = 2n$ for an odd positive integer $n$. Then $G$ has a normal subgroup of index 2. 
+\end{lemma}
+
+\begin{proof}
+Consider $\pi: G \to Sym(G)$, the permutation representation of the right multiplication action of $G$ on itself. By Cauchy's Theorem, we can find an element $t \in G$ of order two. Under the aforementioned action, $t$ has no fixed points. So $\pi(t)$ consists of $|G|/2 = n$ 2-cycles. Since $n$ is odd, $t$ is an odd permutation.
+
+Let $H$ be the elements of $G$ that induce even permutations on $G$. Take $x \in G - H$. Since $x$ induces an odd permutation, $\pi(xt)$ is an even permutation. Then $x \in Ht$ and so $Ht = G- H$. Therefore, $H$ has index 2 and must be normal.
+\end{proof}
+
+We now classify the boundary mentioned above.
+
+\begin{theorem}
+Let $G$ be a finite group. The group $G$ is generalized dihedral of order not divisible by 4 if and only if $|G| = 2e^2$. 
+\end{theorem}
+
+\begin{proof}
+Suppose $G$ is generalized dihedral with order not divisible by 4. Such a group has $|G|/2$ involutions that are all conjugate. Then there exists an $x \in G$ such that $c(x) = 2$. Since this is the largest possible conjguacy class, it corresponds to the smallest possible $e$. Then:
+$$e^2 = \frac{(c(x) - 1)^2}{c(x)} \cdot |G| = \frac{1}{2} \cdot |G|$$
+and so it satisfies the boundary $|G| = 2e^2$.
+
+Now, suppose a finite group $G$ has order $2e^2$. We know by Theorem \ref{ebound}, that this implies $c(x) = 2$ for some $x \in G$. 
+
+
+
+
+
+
+Suppose a finite group $G$ has order $n = 2e^2$. We know by Theorem \ref{firstresult}, that this means
+$G$ has a centralizer of order $c = 2$ for some element $x \in G$. Then $x$ has
+conjugacy class size of $e^2 = n / c$. Applying Lemma \ref{primecentralizer}
+gives us that $e^2$ cannot be divisible by 2. Now, we are in the situation of
+Lemma \ref{isaacsnormalindex2B} and may conclude that $G$ has a normal subgroup
+$B$ of index 2. Since $x$ is conjugate to $e^2$ involutions (including itself)
+and none of these can be contained in $B$ (its order is not divisible by 2), $G
+- B$ must be exactly $x^G$. Thus, $G$ is generalized dihedral of order not
+divisible by 4.
+
+For the reverse implication, we suppose that $G$ is generalized dihedral with
+order $n$ not divisible by 4. We know that such a group must contain a single
+conjugacy class of involutions and thus, there is an involution $x \in G$ such
+that $C_G(x)$ has order $c = 2$. Then: \begin{align*} e^2 &= \frac{(c - 1)^2}{c}
+\cdot n\\ e^2 &= \frac{1}{2} \cdot n\\ 2e^2 &= n \qedhere \end{align*}
+\end{proof}
 
 \end{document}
