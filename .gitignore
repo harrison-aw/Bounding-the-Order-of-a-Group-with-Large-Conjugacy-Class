@@ -12,3 +12,18 @@
 *.bbl
 
 *.blg
+*.bib
+
+*.top
+
+*.mp
+
+*.tmp
+
+*.gz(busy)
+
+*.tui
+
+*.xml
+
+*.tuo
