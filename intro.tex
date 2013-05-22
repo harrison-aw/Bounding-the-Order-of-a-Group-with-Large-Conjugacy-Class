@@ -4,5 +4,95 @@
 
 \section{Introduction}
 
+In 2008, Noah Snyder published \cite{snyderarticle} a result on a group parameter:
+
+\hss
+
+\begin{definition}
+Let $G$ be a group of order $n$ and $V$ an irriducible representation over $\mathbb{C}$ of dimension $d$. Define $e$ to be the non-negative integer $n = d(d + e)$.
+\end{definition}
+
+\hss
+
+If $e$ is small relative to $d$, then $G$ has a character of large degree.
+
+His paper characterized groups possessing an $e \le 3$ and bounded the order of a group via this parameter. In particular, the following theorem is proven:
+
+\hss
+
+\begin{theorem}[Snyder \cite{snyderarticle}]
+Let $G$ be a group of order $n$ with a simple $\C[G]$-module $V$ of dimension $d$ and $d(d+e) = n$. If $e > 1$, $n \le ((2e)!)^2$.
+\end{theorem}
+
+\hss
+
+This begins a series of publications aiming to improve upon Snyder's bound.
+
+The first artcle along this line of inquiry is by Isaacs \cite{isaacsarticle}. The relevant theorem is this:
+
+\hss
+
+\begin{theorem}[Isaacs \cite{isaacsarticle}] Let $G$ be a group of order $n$ and $d$ be the degree of some irreducible character of $G$. If $e > 1$, then $n \le Be^6$ for some universal constant $B$.
+\end{theorem}
+
+\hss
+
+This result requires the simple group classification theorem for full generality. Interestingly, this result spawned another paper (citation needed) whose results were necessary to complete certain cases of Isaacs' proof.
+
+Students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. Their main result is the following:
+
+\hss
+
+\begin{theorem}[Durfee-Jensen \cite{durfeejensenarticle}]
+For $e > 1$, we have the follwing bounds on $|G|$ in terms of $e$:
+\begin{enumerate}
+	\item If $e$ is divisible by two distinct primes, then $|G| < e^4 + e^3$.
+	\item If $e$ is a prime power then $|G| < e^6 - e^4$.
+	\item If $e$ is a prime, then $|G| < e^4 + e^3$.
+\end{enumerate}
+\end{theorem}
+
+\hss
+
+\noindent Since $e$ is an integer, this theorem has as an immediate corollary that $|G| < e^6 - e^4$ for all groups $G$. This removes the universal constant from Isaacs' bound and then some.
+
+Most recently, Mark Lewis gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and shows this to be the best possible.
+
+\hss
+
+\begin{theorem}[Lewis \cite{lewisarticle}] Let $G$ be a group with a nontrivial, abelian normal subgroup. Let $d$ be the degree of some irreducible character of $G$ and $|G| = d(d+e)$. If $e > 1$, then $d \le e^2 - e$ and $|G| \le e^4 - e^3$. This bound is best possible.
+\end{theorem}
+
+\hss
+
+\noindent Notably, all solvable groups satisfy the conditions of this theorem. It thus applies to a large class of interesting groups.
+
+In light of the aforementioned research, it is reasonable to consider the group theoretic analog. There is a close connection between characters and conjugacy classes. Sometimes, a theorem about one will be similar to a theorem about the other. A survey of such results can be found in \cite{larsenmalletieparticle}.
+
+Our approach is to relate character degrees and conjugacy class sizes via the equation:
+\begin{equation}\label{degreeidentity}
+|G| = \sum_{i=1}^n d_i^2
+\end{equation}
+If we take $d_i$ to be the degree of an irreducible character where $i$ indexes $n$ character degrees, we obtain a well known identity \cite{gorensteinfinitegroups}. Conjugacy class sizes satisfy a similar identity:
+\begin{equation*}
+|G| = \sum_{i=1}^n |x_i^G|
+\end{equation*}
+where $|x_i^G|$ is a conjugacy class size and $i$ indexes $n$ distinct conjugacy class representitatives. Thus, if we take $d_i = \sqrt{|x_i^G|}$, then \ref{degreeidentity} is satisfied.
+
+We then define an analogous parameter $e$ via $|G| = d(d+e)$ where $d$ is the square root of a conjugacy class size. This new parameter does not have the nice property of being an integer but it is non-negative. It also has the property that small values of $e$ correspond to tlarge conjugacy class sizes. The majority of this thesis will study this analogous parameter.
+
+The remainder will focus on a more general version. The motivation of this comes from Durfee's dissertation (citation needed). She studies a generalization of Snyder's $e$ relative to a fixed normal subgroup. It is defined for a group $G$ with normal subgroup $N$. Let $\chi$ be an irreducible character of $G$ that restricts to a multiple of $\Theta$ on $N$. Define $d = \chi(1) / \Theta(1)$ and $|G/N| = d(d+e)$.
+
+\noindent Durfee's relative parameter is a non-negative integer and, in the case of $N = 1$, becomes Snyder's parameter. Following this cue, we define an analog:
+
+\hss
+
+\begin{definition}
+Let $N$ be a fixed normal subgroup of $G$ and let $x \in G$. Define $d = \sqrt{|x^G|/|x^N|}$ and $|G/N| = d(d+e)$.
+\end{definition}
+
+\noindent Here $d$ remains an integer but $e$ is real. The case of $N = 1$ yields our original analog. For this relative parameter, we will prove a bound and give a few classification theorem.
+
+The rest of this paper will proceed with a few chapters of background material and then two chapters for our main results.
 
 \end{document}
