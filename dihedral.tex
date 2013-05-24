@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{Dihedral Groups}
+\chapter{Dihedral Groups}
 
 Dihedral groups will play an important role in later results. While some familiarity with their structure is assumed, we will review their relevant properties.
 
@@ -16,19 +16,17 @@ We begin with our definition:
 A \emph{dihedral group} is a group $D$ having a cyclic subgroup $C$ of index 2 such that $D - C$ contains only elements of order 2.
 \end{definition}
 
-\hss
-
 \begin{remark}
 Both the cyclic subgroup of order 2 and the Klein 4-group are dihedral. For the former, take $C = 1$. In the latter, all non-identity elements are involutions and any subgroup of order 2 will suffice for $C$.
 \end{remark}
 
 \hss
 
-Since $|D : C| = 2$, we know that both $C \normal D$ and $D$ has even order. Dihedral groups also have two generators: There exists a $c \in C$ such that $\generate{c} = C$ and that $D - C$ is a coset of $C$. If $t \in D - C$, then $Ct = D - C$ and $\generate{c,t} = D$. Another important property of dihedral groups is that, for $c \in C$ and $t \in D - C$, conjugation of $c$ by $t$ yields the inverse of $c$, that is $c^t = c^{-1}$. Showing this is slightly more involved but still follows quickly from our definition. We know that $ct \in D - C$, so $ct$ must be an involution. Then $ct^2 = ctct = 1$. Left multiplication by $c^{-1}$ now gives the desired relation: $tct = c^t = c^{-1}$. This last property is often used as a defining characteristic in the presentation of dihedral groups: 
+Since $|D : C| = 2$, we know that $C \normal D$ and $D$ has even order. Dihedral groups also have two generators: There exists a $c \in C$ such that $\generate{c} = C$. We also have that $D - C$ is a coset of $C$. If $t \in D - C$, then $Ct = D - C$ and $\generate{c,t} = D$. Another important property of dihedral groups is that, for $c \in C$ and $t \in D - C$, conjugation of $c$ by $t$ yields the inverse of $c$, that is $c^t = c^{-1}$. Showing this is slightly more involved but still follows quickly from our definition. We know that $ct \in D - C$, so $ct$ must be an involution. Then $(ct)^2 = ctct = 1$. Left multiplication by $c^{-1}$ now gives the desired relation: $tct = c^t = c^{-1}$. This last property is often used as a defining characteristic in the presentation of dihedral groups: 
 $$D = \generate{c, t : c^n = 1, t^2 = 1, t^{-1}ct = c^{-1}}$$
 where $|D| = 2n$ for some $n \in \Z$. That presentation is the same as what we have defined above since $\generate{c}$ is a cyclic group and $t$ cannot be in $\generate{c}$. Furthermore, $\generate{c} t$ contains only involutions because $(c^k t) \cdot (c^k t) = c^n \cdot (t^{-1} c^k t) = c^n c^{-n} = 1$.
 
-Another way view dihedral groups is the semi-direct product of $C_n \rtimes_\varphi C_2$ where $C_n$ denotes the cyclic group of order $n$ and $\varphi : C_2 \to Aut(C_n)$ is the map that sends $1_{C_2}$ to the identity automorphism and $C_2$'s other element to the automorphism $c \mapsto c^{-1}$. From this view, we have some element $(c, 1) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_n$ and another element $(1, t) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_2$. Furthermore, $(1, t)$ has the desired conjugation action on $(c, 1)$, i.e. $(c,1)^{(1,t)} = (c^{-1}, 1)$. Finally, we note that $(c, 1)$ and $(1, t)$ comprise a complete set of generators for $C_n \rtimes_\varphi C_2$. Then 
+Another way view to dihedral groups is as the semi-direct product of $C_n \rtimes_\varphi C_2$ where $C_n$ denotes the cyclic group of order $n$ and $\varphi : C_2 \to Aut(C_n)$ is the map that sends $1_{C_2}$ to the identity automorphism and $C_2$'s other element to the automorphism $c \mapsto c^{-1}$. From this view, we have some element $(c, 1) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_n$ and another element $(1, t) \in C_n \rtimes C_2$ that generates the subgroup identified with $C_2$. Furthermore, $(1, t)$ has the desired conjugation action on $(c, 1)$, i.e. $(c,1)^{(1,t)} = (c^{-1}, 1)$. Finally, we note that $(c, 1)$ and $(1, t)$ comprise a complete set of generators for $C_n \rtimes_\varphi C_2$. Then 
 \begin{align*}
 C_n \rtimes_\varphi C_2 = \generate{(c, 1), (1, t) : &(c, 1) = (1, 1), \\
 &(1, t)^2 = (1, 1), \\
@@ -45,18 +43,23 @@ All dihedral groups of order $2n$ are isomorphic.
 \end{proposition}
 
 \begin{proof}
-Let $D_0$ and $D$ be dihedral groups of order $2n$. We seek an isomorphism $\varphi: D_0 \to D$. Let $D_0 = \langle c_0, t_0 \rangle$ and $D = \langle c, t \rangle$ such that $|c_0| = |c| = n$ and $|t| = |t_0| = 2$. Define $\varphi(c_0^k t_0^m) = c^k t^m$ for $0 \le k < n$ and $0 \le m < 2$. Then $\varphi(c_0) = c$ and $\varphi(t_0) = t$ and we get:
-$$\varphi(c_0^k t_0^m) = c^k t^m = \varphi(c_0)^k \varphi(t)^m \text{.}$$
-Thus $\varphi$ is a homomorphism. Because every $d \in D$ can be written $d = c^k t^m$ with $0 \le k < n$, $0 \le m < 2$ and that $\varphi(c_0^k t_0^m) = c^k t^m$,  $\varphi$ is surjective. To show injectivity, suppose $\varphi(c_0^k t_0^m) = \varphi(c_0^l t_0^r)$ for $0 \le k, l < n$ and $0 \le m, r < 2$. Then $c^k t^m = c^l t^r$ which implies that $l \equiv k \pmod n$ and $r \equiv m \pmod 2$. By the bounds imposed on $k$, $m$, $l$, and $r$, we must have $k = l$ and $m = r$.  Then $c_0^k t_0^m = c_0^l t_0^r$. We conclude that $\varphi$ is an isormorphism and the proof is complete.
+Let $D_0$ and $D$ be dihedral groups of order $2n$. We seek an isomorphism $\varphi: D_0 \to D$. Let $D_0 = \langle c_0, t_0 \rangle$ and $D = \langle c, t \rangle$ such that $|c_0| = |c| = n$ and $|t| = |t_0| = 2$. Define $\varphi(c_0^k t_0^m) = c^k t^m$ for $0 \le k < n$ and $0 \le m < 2$. Then $\varphi(c_0^k) = c^k$ and $\varphi(t_0) = t$. We now show $\varphi$ to be a homomorphism. There are 4 cases:
+\begin{enumerate}
+	\item $\varphi(c_0^{k_1} c_0^{k_2}) = c^{k_1 + k_2} = c^{k_1} c^{k_2} = \varphi(c_0^{k_1}) \varphi(c_0^{k_2})$.
+	\item $\varphi(c_0^{k_1} (c_0^{k_2} t_0)) =  c^{k_1+k_2} t = c^{k_1} (c^{k_2} t) = \varphi(c_0^{k_1}) \varphi(c_0^{k_2} t_0)$.
+	\item $\varphi((c_0^{k_1} t_0) c_0^{k_2}) = c^{k_1 - k_2} t = (c^{k_1} t) c^{k_2} = \varphi(c_0^{k_1} t_0) \varphi(c_0^{k_2})$.
+	\item $\varphi((c_0^{k_1} t_0) (c_0^{k_2} t_0)) = c^{k_1 - k_2} = (c^{k_1} t) (c^{k_2} t) = \varphi(c_0^{k_1} t_0) \varphi(c_0^{k_2} t_0)$.
+\end{enumerate}
+The above gives that $\varphi$ respects the multiplication of $D_0$ and is, hence, a homomorphism. Because every $d \in D$ can be written $d = c^k t^m$ with $0 \le k < n$, $0 \le m < 2$ and that $\varphi(c_0^k t_0^m) = c^k t^m$,  $\varphi$ is surjective. To show injectivity, suppose $\varphi(c_0^k t_0^m) = \varphi(c_0^l t_0^r)$ for $0 \le k, l < n$ and $0 \le m, r < 2$. Then $c^k t^m = c^l t^r$ which implies that $l \equiv k \pmod n$ and $r \equiv m \pmod 2$. By the bounds imposed on $k$, $m$, $l$, and $r$, we must have $k = l$ and $m = r$.  Then $c_0^k t_0^m = c_0^l t_0^r$. We conclude that $\varphi$ is an isormorphism and the proof is complete.
 \end{proof}
 
 \hss
 
-\subsection{Conjugacy Classes}
+\section{Conjugacy Classes}
 
 \hss
 
-We now discuss the conjugacy class structure of dihedral groups. The number and sizes of conjugacy classes is completely determined by the order of a dihedral group. In following propositions, let $D$ be a dihedral group and $C \normal D$ be cyclic of index 2.
+We now discuss the conjugacy class structure of dihedral groups. The number and sizes of conjugacy classes is completely determined by the order of a dihedral group. In the following propositions, let $D$ be a dihedral group and $C \normal D$ be cyclic of index 2.
 
 \begin{proposition}\label{cclassstructure}
 If $c \in C$, then $c^D = \{c, c^{-1}\}$.
@@ -75,7 +78,7 @@ Let $n$ be an even integer and $k$ be any integer. Then $k$ and $k \bmod n$ have
 \end{lemma}
 
 \begin{proof}
-Suppose $k \ge 0$ and let $k \bmod n = r$. Then $r = k - n \cdot m$. Immediately, $r$ and $k$ have the same parity since $n \cdot m$ must be even. If $k < 0$, then $r = -k - n \cdot m$ and the same logic gives that $k$ and $k \bmod n$ have the same parity.
+Suppose $k \ge 0$ and let $k \bmod n = r$. Then $r = k - n \cdot m$ for some integer $m$. Immediately, $r$ and $k$ have the same parity since $n \cdot m$ must be even. If $k < 0$, then $r = -k - n \cdot m$ and the same logic gives that $k$ and $k \bmod n$ have the same parity.
 \end{proof}
 
 \begin{proposition}\label{evendihedralclass}
@@ -83,7 +86,7 @@ Let $D$ have order $2n$, $n$ even. Then $D$ has 3 distinct conjugacy classes of 
 \end{proposition}
 
 \begin{proof}
-Since $C$ has even order $n$, it contains an involution which lies in its own conjugacy by the Proposition \ref{cclassstructure}. The remaining involutions are of the form $z^k t$ ($k \in \Z$) where $\generate{z} = C$ and $t \in D - C$. Consider the following:
+Since $C$ has even order $n$, it contains a unique involution which lies in its own conjugacy class by the Proposition \ref{cclassstructure}. The remaining involutions are of the form $z^k t$ ($k \in \Z$) where $\generate{z} = C$ and $t \in D - C$. Consider the following:
 \begin{align*}
 z^{-m} (z^k t) z^m &= z^{-m} (z^k t) z^m t t = z^{k-2m} t \\
 t z^{-m} (z^k t) z^m t &= t z^{k-m} t z^m t= z^{2m-k} t \text{,}
@@ -103,7 +106,7 @@ Each involution of $D$ generates a Sylow 2-subgroup of order 2. All of these are
 
 \hss
 
-\subsection{Factor Groups}
+\section{Factor Groups}
 
 \hss
 
@@ -130,7 +133,7 @@ Let $N \le C$. Let $\bar{ \cdot }$ denote the canonical mapping of $D \mapsto D/
 
 \hss
 
-\subsection{Generalized Dihedral Groups}
+\section{Generalized Dihedral Groups}
 
 \hss
 

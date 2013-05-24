@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{Frobenius Groups}
+\chapter{Frobenius Groups}
 
 Frobenius groups will play an important role in the results of this thesis. We present the required background here.
 
@@ -20,7 +20,7 @@ Similarly, generalized dihedral groups $G = B \rtimes C_2$ are Frobenius if $|B|
 
 \hss
 
-\subsection{Kernels and Complements}
+\section{Kernels and Complements}
 
 \hss
 
@@ -32,21 +32,21 @@ Let $G$ be a Frobenius group with kernel $N$ and complement $A$. Then $|N| \equi
 
 \begin{proof}
 Consider the $A$-orbits of $N$. By the Orbit-Stabilizer theorem, $|\mathcal{O}_n| = |A : C_A(n)|$ for all $n \in N$. But, $n^a \ne n$ for non-identity elements $n \in N$ and so $C_A(n) = 1$ unless $n = 1$. Exactly one orbit of $N$ is then of size $1$ and all others are of size $|A|$. We conclude that $|N| = 1 + k |A|$ for some positive integer $k$ and thus $|N| \equiv 1 \pmod{|A|}$.
-\end{proof}s
+\end{proof}
 
 \begin{lemma}\label{frobeniusdisjoint}
 If $G$ is a Frobenius group with kernel $N$ having complement $A$, then $A \cap A^g = 1$ for $g \in G - A$.
 \end{lemma}
 
 \begin{proof}
-Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
+Suppose $A \cap A^x > 1$ for some $x \in G$. Since $G = AN$, we may write $x = an$ for some $a \in A$ and $n \in N$. Then $A \cap A^{an} = A \cap A^n > 1$ and there exists some non-identity $b^n \in A \cap A^n$. This gives us that $[b,n] = b^{-1}b^n \in A$. Since $N$ is normal, $[b, n] \in N$ for $b \in A$ and $n \in N$. But then $[b,n] \in A \cap N = 1$ and so $b$ must centralize $n$. Since $G$ is Frobenius we are forced to conclude $n = 1$ and that $x \in A$. Thus, $A \cap A^g = 1$ for $g \in G - A$.
 \end{proof}
 
 Other properties can be found in \cite{isaacsfinitegrouptheory}, \cite{gorensteinfinitegroups}, \cite{isaacsalgebra} for the interested reader.
 
 \hss
 
-\subsection{Frobenius' Theorem}
+\section{Frobenius' Theorem}
 
 \hss
 
@@ -69,7 +69,7 @@ $$N = (G - \bigcup_{g \in G} A^g) \cup \{1\}$$
 is a normal subgroup of order $|G : A|$.
 \end{theorem}
 
-Unfortunately, no character free proof of this result has been discovered. The proof has been omitted here as the background material would significantly lengthen this thesis. For the motivated reader, one may consult Isaac's \emph{Algebra: A Graduate Course} <cite> for a chapter devoted to reaching this result as quickly as possible.
+Unfortunately, no character free proof of this result has been discovered. The proof has been omitted here as the background material would significantly lengthen this thesis. For the motivated reader, one may consult Isaac's \emph{Algebra: A Graduate Course} \cite{isaacsalgebra} for a chapter devoted to reaching this result as quickly as possible.
 
 An useful corollary is this:
 
@@ -81,7 +81,7 @@ Moving on, we use these results to prove some other relevant characterizations.
 
 \hss
 
-\subsection{Characterizations}
+\section{Characterizations}
 
 \hss
 
@@ -101,13 +101,13 @@ Suppose that $G$ is Frobenius. Let $a \in A$ be a non-identity element and take 
 
 Now, assume (2) and we show (1). Let $a \in A$ be a non-identity element. Then:
 $$C_N(a) = N \cap C_G(a) \subseteq N \cap A = 1$$
-where the subset relation holds by (2) and the final equality holds because $A$ is a complement of $N$.
+where the subset relation holds by (2) and the final equality holds because $A$ is a complement of $N$. So (1) follows.
 
 Again, suppose $G$ is Frobenius. Let $n \in N$ be a non-identity element. Assume that $C_G(n) \not\subseteq N$. By Corollary \ref{frobeniuscorollary}, $a^g \in C_G(n)$ for some non-identity $a \in A$ and $g \in G$. If $m = n^{g^{-1}}$, then $a \in C_G(m)$. Since $N$ is normal, $m \in N$ and, because $G$ is Frobenius, we must have $m=1$. But then $n = 1$ --- a contradiction. Therefore, $C_G(n) \le N$.
 
 Finally, we prove (1) from (3). Let $n \in N$ be a non-identity element. Then
 $$C_A(n) = A \cap C_G(n) \subseteq A \cap N = 1$$
-wehre the subeset relation holds by (3) and the latter equality because $A$ complements $N$. Thus, $G$ is Frobenius.
+where the subeset relation holds by (3) and the latter equality because $A$ complements $N$. Thus, $G$ is Frobenius.
 \end{proof}
 
 \begin{lemma}\label{frobeniusnormalizer}

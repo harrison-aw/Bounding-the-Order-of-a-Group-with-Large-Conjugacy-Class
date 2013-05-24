@@ -2,11 +2,11 @@
 
 \begin{document}
 
-\section{The Relative Parameter}
+\chapter{An Analog to Durfee's Relative Parameter}
 
 In this section, we consider a generalization of the parameter $e$ that incorporates a normal subgroup. For $x \in G$ and $N \normal G$, let $c_N(x) = |C_G(x):C_N(x)|$ and $k_N(x) = |G:NC_G(x)|$. We then define $e_N$, the relative parameter, as follows:
 $$e_N = min\{(c_N(x) - 1) \cdot \sqrt{k_N(x)} : x \in G\}\text{.}$$
-If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our original $e$. Before we analyze $e_N$, we introduce a definition used by J. Britnell and M. Wildon.
+If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Before we analyze $e_N$, we introduce a definition used by J. Britnell and M. Wildon \cite{britnellwildonarticle}.
 
 \hss
 
@@ -16,7 +16,7 @@ Let $G$ be a finite group and $N \normal G$. A conjugacy class $x^G$ of $G$ is \
 
 \hss
 
-The following lemma establishes a useful result regarding the behavoir of $c_N(x)$ and $k_N(x)$.
+The following lemma establishes a useful result regarding the behavior of $c_N(x)$ and $k_N(x)$.
 
 \begin{lemma}\label{kn1}
 Let $G$ be a finite group with normal subgroup $N$. For $x \in G$, $c_N(x)$ and $k_N(x)$ are positive integers. The conjugacy class of $x$ is non-split if and only if $k_N(x) = 1$.
@@ -37,13 +37,7 @@ Now suppose $k_N(x) = 1$. Then
 We may infer that $|x^G| = |x^N|$. But, since $x^N \subseteq x^G$, it must be the case that $x^N = x^G$ and thus $x^G$ is non-split.
 \end{proof}
 
-\hss
-
-\subsection{Analysis of $e_N$}
-
-\hss
-
-We first note that it is possible for $e_N$ to equal zero because $c_N(x)$ can equal one. Also, given the lower bounds on $c_N$ and $k_N$, we have that $e_N \ge 0$. This brings us to our first result:
+We begin by noting that it is possible for $e_N$ to equal zero because $c_N(x)$ can equal one. Also, given the lower bounds on $c_N$ and $k_N$, we have that $e_N \ge 0$. This brings us to our first result:
 
 \begin{theorem}\label{en0}
 Let $G$ be a finite gorup with normal subgroup $N$. The parameter $e_N$ is zero if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers.
@@ -72,8 +66,8 @@ Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We m
 \begin{theorem}
 If $e_N = p$ for a prime $p$, then either:
 \begin{enumerate}
-	\item $|G:N| = p + 1$ and some conjugacy class $x^G$ of $G$ is non-split
-	\item[(2)] $|G:N| = 2p^2$ and some conjugacy class $x^G$ of $G$ is split
+	\item $|G:N| = p + 1$ and some conjugacy class $x^G$ of $G$ is non-split.
+	\item $|G:N| = 2p^2$ and some conjugacy class $x^G$ of $G$ is split.
 \end{enumerate}
 \end{theorem}
 

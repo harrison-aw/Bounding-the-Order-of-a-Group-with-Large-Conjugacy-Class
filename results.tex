@@ -2,7 +2,13 @@
 
 \begin{document}
 
-\section{Main Results: An Analog to Snyder's Parameter}
+\chapter{An Analog to Snyder's Parameter}
+
+Here begins the main results of this thesis. The following chapter is devoted to a group theoretic analog to Snyder's parameter. We replace his use of irreducible character degrees with the square roots of conjugacy class sizes. Both of these satisfy the identity:
+$$|G| = \sum_{i=1}^n d_i^2$$
+where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of degrees or conjugacy classes. After initial definitions, we'll begin with a few characterizations based on integral values of $e$. Then, we will bound the order of a group by our parameter and characterize groups satisfying this boundary.
+
+Without further ado:
 
 \hss
 
@@ -19,7 +25,7 @@ e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
  &= c(x)\frac{k(x)}{\sqrt{k(x)}} - \sqrt{k(x)} \\
  &= \frac{|G|}{\sqrt{k(x)}} - \sqrt{k(x)}\text{.}
 \end{align*}
-If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. Moreover, if we were to replace our $d$ by the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0, 1, or 2.
+If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. As mentioned above, if we replace $d$ with the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0, 1, or 2.
 
 \begin{theorem}\label{easycharacterization}
 Let $G$ be a finite group.
@@ -90,7 +96,7 @@ which completes the proof.
 
 A natural follow-up to this theorem is the question: ``Which groups satisfy the boundary?'' Before we answer this, let us a review the following basic fact:
 
-\begin{lemma}[\cite{isaacsfinitegrouptheory}]
+\begin{lemma}[\cite{isaacsfinitegrouptheory}]\label{ordernormal}
 Let $|G| = 2n$ for an odd positive integer $n$. Then $G$ has a normal subgroup of index 2. 
 \end{lemma}
 
@@ -113,26 +119,15 @@ and so it satisfies the boundary $|G| = 2e^2$.
 
 Now, suppose a finite group $G$ has order $2e^2$. We know by Theorem \ref{ebound}, that this implies $c(x) = 2$ for some $x \in G$. 
 
+Suppose a finite group $G$ has order $n = 2e^2$. We know by Theorem \ref{ebound}, that this means $G$ has a centralizer of order $c = 2$ for some element $x \in G$. Then $x$ has
+conjugacy class size of $e^2 = n / c$. Applying Lemma \ref{psquared} gives us that $e^2$ cannot be divisible by 2. Now, we are in the situation of Lemma \ref{ordernormal} and may conclude that $G$ has a normal subgroup $B$ of index 2. Since $x$ is conjugate to $e^2$ involutions (including itself) and none of these can be contained in $B$ (its order is not divisible by 2), $G - B$ must be exactly $x^G$. Thus, $G$ is generalized dihedral of order not divisible by 4.
 
-
-
-
-
-Suppose a finite group $G$ has order $n = 2e^2$. We know by Theorem \ref{firstresult}, that this means
-$G$ has a centralizer of order $c = 2$ for some element $x \in G$. Then $x$ has
-conjugacy class size of $e^2 = n / c$. Applying Lemma \ref{primecentralizer}
-gives us that $e^2$ cannot be divisible by 2. Now, we are in the situation of
-Lemma \ref{isaacsnormalindex2B} and may conclude that $G$ has a normal subgroup
-$B$ of index 2. Since $x$ is conjugate to $e^2$ involutions (including itself)
-and none of these can be contained in $B$ (its order is not divisible by 2), $G
-- B$ must be exactly $x^G$. Thus, $G$ is generalized dihedral of order not
-divisible by 4.
-
-For the reverse implication, we suppose that $G$ is generalized dihedral with
-order $n$ not divisible by 4. We know that such a group must contain a single
-conjugacy class of involutions and thus, there is an involution $x \in G$ such
-that $C_G(x)$ has order $c = 2$. Then: \begin{align*} e^2 &= \frac{(c - 1)^2}{c}
-\cdot n\\ e^2 &= \frac{1}{2} \cdot n\\ 2e^2 &= n \qedhere \end{align*}
+For the reverse implication, we suppose that $G$ is generalized dihedral with order $n$ not divisible by 4. We know that such a group must contain a single conjugacy class of involutions and thus, there is an involution $x \in G$ such that $C_G(x)$ has order $c = 2$. Then:
+\begin{align*}
+e^2 &= \frac{(c - 1)^2}{c} \cdot n\\
+e^2 &= \frac{1}{2} \cdot n\\ 
+2e^2 &= n \qedhere 
+\end{align*}
 \end{proof}
 
 \end{document}

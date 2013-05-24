@@ -2,18 +2,38 @@
 
 \usepackage{subfiles}
 \usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{biblatex}
+
 \usepackage[margin=1in]{geometry}
+
 \usepackage{setspace}
 
-\newtheorem{theorem}{Theorem}[subsection]
+\doublespacing
+
+\addtolength{\oddsidemargin}{.25in}
+\addtolength{\evensidemargin}{.25in}
+
+\usepackage{biblatex}
+
+\bibliography{bibliography}
+
+\usepackage{xr}
+\externaldocument{intro}
+\externaldocument{dihedral}
+\externaldocument{actions}
+\externaldocument{frobenius}
+\externaldocument{results}
+
+
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 
-\numberwithin{theorem}{subsection}
+\numberwithin{theorem}{section}
 
 \newenvironment{definition}[1][Definition]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
@@ -29,10 +49,3 @@
 
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
-
-\doublespacing
-
-\addtolength{\oddsidemargin}{.25in}
-\addtolength{\evensidemargin}{.25in}
-
-\bibliography{bibliography}

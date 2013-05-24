@@ -2,21 +2,21 @@
 
 \begin{document}
 
-\section{Introduction}
+\chapter{Introduction}
 
-In 2008, Noah Snyder published \cite{snyderarticle} a result on a group parameter:
+In 2008, Noah Snyder published \cite{snyderarticle} a result on a group parameter $e$. He classified groups based on fixed values of $e$ and bounded the order of a group with it. His definition is this:
 
 \hss
 
 \begin{definition}
-Let $G$ be a group of order $n$ and $V$ an irriducible representation over $\mathbb{C}$ of dimension $d$. Define $e$ to be the non-negative integer $n = d(d + e)$.
+Let $G$ be a group of order $n$ and $V$ an irreducible representation over $\mathbb{C}$ of dimension $d$. Define $e$ to be the non-negative integer $n = d(d + e)$.
 \end{definition}
 
 \hss
 
-If $e$ is small relative to $d$, then $G$ has a character of large degree.
+The parameter $e$ must be an integer since $d$ divides $|G|$. It has the interesting property that if $e$ is small relative to $d$, then $G$ has a character of large degree.
 
-His paper characterized groups possessing an $e \le 3$ and bounded the order of a group via this parameter. In particular, the following theorem is proven:
+Before Snyder, Yakov Berkovich classified groups where $e=1$ and $e=2$ \cite{berkovicharticle}. Snyder added to this classification by solving the case where $e=3$. His most noteworthy contribution to this problem, though, is the following theorem:
 
 \hss
 
@@ -26,9 +26,7 @@ Let $G$ be a group of order $n$ with a simple $\C[G]$-module $V$ of dimension $d
 
 \hss
 
-This begins a series of publications aiming to improve upon Snyder's bound.
-
-The first artcle along this line of inquiry is by Isaacs \cite{isaacsarticle}. The relevant theorem is this:
+This sparked a series of publications aiming to improve upon the bound. The first article along this line of inquiry was written by Isaacs \cite{isaacsarticle}. The relevant theorem from his article:
 
 \hss
 
@@ -37,9 +35,9 @@ The first artcle along this line of inquiry is by Isaacs \cite{isaacsarticle}. T
 
 \hss
 
-This result requires the simple group classification theorem for full generality. Interestingly, this result spawned another paper (citation needed) whose results were necessary to complete certain cases of Isaacs' proof.
+This result required the simple group classification theorem for full generality, but succeeded in giving a polynomial bound. Interestingly, it spawned another paper \cite{larsenmalletieparticle} whose results were necessary to complete certain cases of Isaacs' proof.
 
-Students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. Their main result is the following:
+Two students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. They removed the universal constant from Isaacs bound and then some. Their main result was the following:
 
 \hss
 
@@ -54,9 +52,9 @@ For $e > 1$, we have the follwing bounds on $|G|$ in terms of $e$:
 
 \hss
 
-\noindent Since $e$ is an integer, this theorem has as an immediate corollary that $|G| < e^6 - e^4$ for all groups $G$. This removes the universal constant from Isaacs' bound and then some.
+\noindent Since $e$ is an integer, this theorem has as an immediate corollary that $|G| < e^6 - e^4$ for all groups $G$. It is still a polynomial of degree 6, but is significantly smaller than Isaac's bound.
 
-Most recently, Mark Lewis gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and shows this to be the best possible.
+Mark Lewis made the most recent advance. He gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and showed that certain groups satisfy this bound, proving it to be best possible.
 
 \hss
 
@@ -65,34 +63,35 @@ Most recently, Mark Lewis gave general conditions \cite{lewisarticle} for a grou
 
 \hss
 
-\noindent Notably, all solvable groups satisfy the conditions of this theorem. It thus applies to a large class of interesting groups.
+\noindent Notably, all solvable groups satisfy the conditions of this theorem making it applicable to a large class of interesting groups.
 
-In light of the aforementioned research, it is reasonable to consider the group theoretic analog. There is a close connection between characters and conjugacy classes. Sometimes, a theorem about one will be similar to a theorem about the other. A survey of such results can be found in \cite{larsenmalletieparticle}.
-
-Our approach is to relate character degrees and conjugacy class sizes via the equation:
-\begin{equation}\label{degreeidentity}
-|G| = \sum_{i=1}^n d_i^2
-\end{equation}
-If we take $d_i$ to be the degree of an irreducible character where $i$ indexes $n$ character degrees, we obtain a well known identity \cite{gorensteinfinitegroups}. Conjugacy class sizes satisfy a similar identity:
-\begin{equation*}
-|G| = \sum_{i=1}^n |x_i^G|
-\end{equation*}
-where $|x_i^G|$ is a conjugacy class size and $i$ indexes $n$ distinct conjugacy class representitatives. Thus, if we take $d_i = \sqrt{|x_i^G|}$, then \ref{degreeidentity} is satisfied.
-
-We then define an analogous parameter $e$ via $|G| = d(d+e)$ where $d$ is the square root of a conjugacy class size. This new parameter does not have the nice property of being an integer but it is non-negative. It also has the property that small values of $e$ correspond to tlarge conjugacy class sizes. The majority of this thesis will study this analogous parameter.
-
-The remainder will focus on a more general version. The motivation of this comes from Durfee's dissertation (citation needed). She studies a generalization of Snyder's $e$ relative to a fixed normal subgroup. It is defined for a group $G$ with normal subgroup $N$. Let $\chi$ be an irreducible character of $G$ that restricts to a multiple of $\Theta$ on $N$. Define $d = \chi(1) / \Theta(1)$ and $|G/N| = d(d+e)$.
-
-\noindent Durfee's relative parameter is a non-negative integer and, in the case of $N = 1$, becomes Snyder's parameter. Following this cue, we define an analog:
+A related problem was the subject of Durfee's dissertation \cite{durfeedissertation}. She studied a parameter that is essentially Snyder's $e$ relative to a fixed normal subgroup.
 
 \hss
 
 \begin{definition}
-Let $N$ be a fixed normal subgroup of $G$ and let $x \in G$. Define $d = \sqrt{|x^G|/|x^N|}$ and $|G/N| = d(d+e)$.
+Let $N$ be a normal subgroup of a finite group $G$. Let $\chi$ and $\Theta$ be irreducible characters of $G$ and $N$, respectively, such that $\Theta$ is fixed by the conjugation action of $G$ and $\chi$ restricts to a multiple of $\Theta$ on $N$. Let $d = \chi(1)/\Theta(1)$. Define $e$ by $|G/N| = d(d+e)$.
 \end{definition}
 
-\noindent Here $d$ remains an integer but $e$ is real. The case of $N = 1$ yields our original analog. For this relative parameter, we will prove a bound and give a few classification theorem.
+\hss
 
-The rest of this paper will proceed with a few chapters of background material and then two chapters for our main results.
+\noindent Durfee's parameter, like Snyder's, is always a non-negative integer. In her dissertation, she studies the case where $e = 1$ and $e = 2$ and gives consideration to supersolvable groups and nilpotent groups.
 
+\hss
+
+In light of the aforementioned research, a group theoretic analog is studied in this thesis. There is a close connection between characters and conjugacy classes that often motivates a problem for one based off a result of the other. Sometimes, the theorems produced from this line of research are very similiar. A survey of such results can be found in \cite{chillagarticle}.
+
+Our approach is to preserve the following identity:
+\begin{equation}\label{degreeidentity}
+|G| = \sum_{i=1}^n d_i^2
+\end{equation}
+where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ character degrees of $G$. We want to replace the $d_i$'s with analogous values for conjugacy classes. Sizes of conjugacy classes satisfy a similar identity:
+$$|G| = \sum_{i=1}^n |x_i^G|$$
+where $|x_i^G|$ is a conjugacy class size and $i$ indexes $n$ distinct conjugacy class representitatives. Thus, we may take $d_i = \sqrt{|x_i^G|}$ to preserve (\ref{degreeidentity}).
+
+Our parameter is then defined with the same equation as the others: $|G| = d(d+e)$ where $d$ is the square root of a conjugacy class size. Unfortunately, this new parameter does not have the nice property of being an integer but is non-negative. It also has the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups satisfying the bound.
+
+We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as before that $e$ is not an integer. In spite of this, there are still some worthwhile results for the analog. We will provide a general bound and give results for fixed values of $e$.
+
+The rest of this paper proceeds with chapters of background material grouped by topics and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following though, where possible, we try to be complete. When it is not feasible to provide a proof, a reference is given.
 \end{document}

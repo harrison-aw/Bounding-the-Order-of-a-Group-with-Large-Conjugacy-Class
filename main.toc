@@ -1,0 +1,27 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Dihedral Groups}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Conjugacy Classes}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Factor Groups}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Generalized Dihedral Groups}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Group Actions}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Transitive Actions}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Frobenius Groups}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Kernels and Complements}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Frobenius' Theorem}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Characterizations}{24}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}An Analog to Snyder's Parameter}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}An Analog to Durfee's Relative Parameter}{33}
