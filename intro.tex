@@ -54,7 +54,7 @@ For $e > 1$, we have the follwing bounds on $|G|$ in terms of $e$:
 
 \noindent Since $e$ is an integer, this theorem has as an immediate corollary that $|G| < e^6 - e^4$ for all groups $G$. It is still a polynomial of degree 6, but is significantly smaller than Isaacs' bound.
 
-Mark Lewis made the most recent advance. He gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and showed that certain groups satisfy this bound, proving it to be best possible.
+Mark Lewis made the most recent advance. He gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and, since there exist solvable groups which attain this bound, it is best possible.
 
 \hss
 
@@ -63,9 +63,11 @@ Mark Lewis made the most recent advance. He gave general conditions \cite{lewisa
 
 \hss
 
-\noindent Notably, all solvable groups satisfy the conditions of this theorem making it applicable to a large class of interesting groups.
+\noindent Notably, all solvable groups satisfy the conditions of this theorem. Since there exist solvable groups where $|G| = e^4 - e^3$ (a result due to Isaacs \cite{isaacsarticle}), this problem is completely solved for solvable groups. 
 
-A related problem was the subject of Durfee's dissertation \cite{durfeedissertation}. She studied a parameter that is essentially Snyder's $e$ relative to a fixed normal subgroup.
+\hss
+
+A related problem was the subject of Durfee's dissertation \cite{durfeedissertation}. She studied a parameter that is essentially Snyder's $e$ relative to a fixed normal subgroup. 
 
 \hss
 
@@ -75,7 +77,18 @@ Let $N$ be a normal subgroup of a finite group $G$. Let $\chi$ and $\Theta$ be i
 
 \hss
 
-\noindent Durfee's parameter, like Snyder's, is always a non-negative integer. In her dissertation, she studies the case where $e = 1$ and $e = 2$ and gives consideration to supersolvable groups and nilpotent groups.
+\noindent Durfee's parameter, like Snyder's, is always a non-negative integer. In her dissertation, she studies the case where $e = 1$ and $e = 2$ and gives consideration to supersolvable groups and nilpotent groups. Her main result, though, was the following:
+
+\hss
+
+\begin{theorem}[Durfee \cite{durfeedissertation}]
+Let $N$ be a normal subgroup of a finite group $G$ where $G/N$ is solvable and let $\Theta$ be an irreducible character of $N$ that is $G$-invariant. Let $\chi$ be an irreducible character of $G$ that is a multiple of $\Theta$ and let $d = \chi(1)/\Theta(1)$. Write $|G:N| = d(d+e)$ for some non-negative integer $e$. If $e \ge 1$ and $d > e^5 - e$, then we can find groups $X$ and $Y$ such that:
+\begin{enumerate}
+	\item $N \subseteq X \normal Y \subseteq G$
+	\item $|Y/X| = (d/e)(d/e+1)$
+	\item $Y/X$ is either the group of order 2 or is a 2-transitive Frobenius group.
+\end{enumerate}
+\end{theorem}
 
 \hss
 
@@ -85,13 +98,15 @@ Our approach is to preserve the following identity:
 \begin{equation}\label{degreeidentity}
 |G| = \sum_{i=1}^n d_i^2
 \end{equation}
-where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ character degrees of $G$. We want to replace the $d_i$'s with analogous values for conjugacy classes. Sizes of conjugacy classes satisfy a similar identity:
+where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ character degrees of $G$. This is a well-known identity that holds for all finite groups \cite{gorensteinfinitegroups}. We thus want to replace the $d_i$'s with analogous values for conjugacy classes. Sizes of conjugacy classes satisfy a similar identity:
 $$|G| = \sum_{i=1}^n |x_i^G|$$
-where $|x_i^G|$ is a conjugacy class size and $i$ indexes $n$ distinct conjugacy class representitatives. Thus, we may take $d_i = \sqrt{|x_i^G|}$ to preserve (\ref{degreeidentity}).
+where there are $n$ distinct conjugacy classes and the $x_i \in G$ are representitatives of each of these conjugacy classes. Since the number of irreducible characters and conjugacy classes are the same, the primary difference between the two identities is the presence of squared terms in the former. The simplest way to accomodate this is to consider the square root of conjugacy class sizes instead of just conjugacy class sizes:
+$$|G| = \sum_{i=1}^n \left(\sqrt{|x_i^G|}\right)^2\text{.}$$
+This maintains the form of (\ref{degreeidentity}) even though our terms are no longer rational. The main benefit of this change is that it makes the definition of an analogous $e$ more natural.
 
-Our parameter is then defined with the same equation as the others: $|G| = d(d+e)$ where $d$ is the square root of a conjugacy class size. Unfortunately, this new parameter does not have the nice property of being an integer but is non-negative. It also has the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups satisfying the bound.
+Taking $d$ to be the square root of a conjugacy class, we can define an analog $e$ with Snyder's equation: $|G| = d(d+e)$. We still have that  $d^2 + de$ is a sum of non-negative integers but, unfortunately, that is the extent of the parallel. This analog $e$ is not an integer. It does, however, have the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This is inherent in the equation $|G| = d(d + e)$ (analysis of the derivative, an exercise left to the reader, verifies that $d$ is a decreasing function of $e$ for a fixed group order). For non-trivial groups, this indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups attaining the bound.
 
 We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as before that $e$ is not an integer. In spite of this, there are still some worthwhile results for the analog. We will provide a general bound and give results for fixed values of $e$.
 
-The rest of this paper proceeds with chapters of background material grouped by topics and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following though, where possible, we try to be complete. When it is not feasible to provide a proof, a reference is given.
+The rest of this paper proceeds with chapters of background material grouped by topics and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following although, where possible, we try to present all supporting results. When it is not feasible to provide a proof, a reference is given.
 \end{document}
