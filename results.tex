@@ -4,9 +4,9 @@
 
 \chapter{An Analog to Snyder's Parameter}
 
-Here begins the main results of this thesis. The following chapter is devoted to a group theoretic analog to Snyder's parameter. We replace his use of irreducible character degrees with the square roots of conjugacy class sizes. Both of these satisfy the identity:
+Here begin the main results of this thesis. The following chapter is devoted to a group theoretic analog to Snyder's parameter. We replace his use of irreducible character degrees with the square roots of conjugacy class sizes. Both of these satisfy the identity:
 $$|G| = \sum_{i=1}^n d_i^2$$
-where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of degrees or conjugacy classes. After initial definitions, we'll begin with a few characterizations based on integral values of $e$. Then, we will bound the order of a group by our parameter and characterize groups satisfying this boundary.
+where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of characters or conjugacy classes. After initial definitions, we will begin with a few characterizations based on integral values of $e$. Then, we will bound the order of a group by our parameter and characterize groups attaining this boundary.
 
 Without further ado:
 
@@ -19,7 +19,11 @@ $$e = min\{(c(x) - 1) \cdot \sqrt{k(x)} : x \in G\}\text{.}$$
 
 \hss
 
-This parameter is small for groups with a large conjugacy class. Let $x \in G$ be such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$. Consider the following:
+
+
+This parameter is small for groups with a large conjugacy class. In particular, the smallest possible values of $e$ are attained only by groups with a conjugacy class that contains exactly half of the group's elements, the largest non-trivial conjugacy class possible relative to a group's order (\ref{boundaryclassification). Given the 
+
+ Let $x \in G$ be such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$. Consider the following:
 \begin{align*}
 e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
  &= c(x)\frac{k(x)}{\sqrt{k(x)}} - \sqrt{k(x)} \\
@@ -108,7 +112,7 @@ Let $H$ be the elements of $G$ that induce even permutations on $G$. Take $x \in
 
 We now classify the boundary mentioned above.
 
-\begin{theorem}
+\begin{theorem}\label{boundaryclassification}
 Let $G$ be a finite group. The group $G$ is generalized dihedral of order not divisible by 4 if and only if $|G| = 2e^2$. 
 \end{theorem}
 
