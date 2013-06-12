@@ -6,7 +6,7 @@
 
 Here begin the main results of this thesis. The following chapter is devoted to a group theoretic analog to Snyder's parameter. We replace his use of irreducible character degrees with the square roots of conjugacy class sizes. Both of these satisfy the identity:
 $$|G| = \sum_{i=1}^n d_i^2$$
-where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of characters or conjugacy classes. After initial definitions, we will begin with a few characterizations based on integral values of $e$. Then, we will bound the order of a group by our parameter and characterize groups attaining this boundary.
+where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of characters or conjugacy classes (the number of objects indexed is the same in both cases (cite)). After initial definitions and examples, we will analyze the properties of and range of values $e$ can take. Then, we will bound the order of a group by our parameter and characterize groups attaining this bound.
 
 Without further ado:
 
@@ -19,17 +19,26 @@ $$e = min\{(c(x) - 1) \cdot \sqrt{k(x)} : x \in G\}\text{.}$$
 
 \hss
 
-
-
-This parameter is small for groups with a large conjugacy class. In particular, the smallest possible values of $e$ are attained only by groups with a conjugacy class that contains exactly half of the group's elements, the largest non-trivial conjugacy class possible relative to a group's order (\ref{boundaryclassification). Given the 
-
- Let $x \in G$ be such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$. Consider the following:
+To  see that this really corresponds with Snyder's $e$, let $x \in G$ be such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$ and consider the following:
 \begin{align*}
 e &= (c(x) - 1) \cdot \sqrt{k(x)} \\
  &= c(x)\frac{k(x)}{\sqrt{k(x)}} - \sqrt{k(x)} \\
  &= \frac{|G|}{\sqrt{k(x)}} - \sqrt{k(x)}\text{.}
 \end{align*}
-If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. As mentioned above, if we replace $d$ with the degree of an irreducible character, we obtain Snyder's original parameter. With this, we now follow Snyder's example and classify groups where $e$ is 0, 1, or 2.
+If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since $k(x)$ is precisely the size of the conjugacy class containing $x$, for a fixed $G$, when the conjugacy class of $x$ is very large, $e$ is very small. This behavior is similar to Snyder's parameter with character degrees. 
+
+For a more detailed analysis of this relation, consider the function $f(c) = (c - 1) \sqrt{n/c}$ where $n$ is the order of a group and $c$ is the order of a centralizer. Parameter $e = min f$ over the specified domain. Since $f'(c) = \sqrt{n/c} \cdot (c+1) / 2c$ and $c \ge 1$, the function $f$ must be monotonically increasing. Thus, small values of $e$ are correlated with small centralizers or, equivalently, large conjugacy class sizes. In particular, the smallest possible values of $e$ are attained only by groups with a conjugacy class that contains exactly half of the group's elements, the largest non-trivial conjugacy class possible relative to a group's order (\ref{boundaryclassification}).
+
+This gives us a method for determining the value $e$ for a given group: find the largest conjugacy class and use the above formula. For abelian groups, this means that the result is nearly trivial. Since all conjugacy classes are singletons in such groups, we have $e = n - 1$. Another easy example is the the symmetric groups. The largest conjugacy class in $S_n$ is that of the $(n-1)$-cycles (cite) and it has size $n!/(n-1)$. The value of $e$ for $S_n$ is then:
+$$e = (n - 2) \cdot \sqrt{\frac{n!}{n-1}}\text{.}$$
+
+\hss
+
+We now analyze the smallest possible values our parameter $e$ can take. Note that the groups here are very small and that $e$ necessarily increases for larger groups (a closer look at the function $f$ mentioned above reveals that $f$ increases as $n$ does). In fact, given the order of a group, we can specify the range of values $e$ can take. We need only look at the largest possible conjugacy class and the smallest possible conjugacy class. If $G$ is a non-trivial group, it's largest conjugacy class can contain up to half of the group's elements. This case corresponds to a centralizer of order 2. For the other extreme, a conjugacy class can contain only a single element. This happens in abelian groups and the entire group is the centralizer for every element. Then, for a group $G$ of order $n$:
+\begin{equation}\label{erange}
+\sqrt{\frac{n}{2}} \le e \le n - 1\text{.}
+\end{equation}
+This fact makes it easy to classify groups with small values of $e$.
 
 \begin{theorem}\label{easycharacterization}
 Let $G$ be a finite group.
@@ -43,15 +52,18 @@ Let $G$ be a finite group.
 \begin{proof}
 For the following, let $x \in G$ be an element such that $e = (c(x) - 1) \cdot \sqrt{k(x)}$.
 
-
 Suppose $e = 0$. Then $c(x) = 1$. Only the trivial group has a trivial centralizer. This is sufficient for (1).
 
 Let $e = 1$. Then $c(x) = 2$ and $k(x) = 1$. It must be the case that $|G| = 2$ and so $G$ is $C_2$. Reversing this argument proves (2).
 
-Now, let $e = 2$. There are two cases. If $c(x) = 3$ and $k(x) = 1$, then $G$ must be $C_3$. Since $C_3$ must have $e = 2$, we need only consider the remaining case. Assume $c(x) = 2$ and $k(x) = 4$. This implies that $|G| = 8$. Since $c(x) < 8$, $G$ cannot be abelian. The only two groups of order 8 that are not abelian are $D_8$ and $Q_8$, the dihedral group of order 8 and quaternion group respectively. Neither of these groups have a self-centralizing involution and thus $G$ can be neither. This completes (3).
+Now, let $e = 2$. There are two cases. If $c(x) = 3$ and $k(x) = 1$, then $G$ must be $C_3$. Since $C_3$ must have $e = 2$, we need only consider the remaining case. Assume $c(x) = 2$ and $k(x) = 4$. This implies that $|G| = 8$. Since $c(x) < 8$, $G$ cannot be abelian. The only two groups of order 8 that are not abelian are $D_8$ and $Q_8$ (cite), the dihedral group of order 8 and quaternion group respectively. Neither of these groups have a self-centralizing involution and thus $G$ can be neither. This completes (3).
 \end{proof}
 
-We will need the following lemma for the next theorem.
+Due to equation (\ref{erange}), if a group is non-trivial, $e \ge 1$. This gives, as a nice corollary, that $e$ cannot take on any value between 0 and 1. However, this is not quite the case for values between $1$ and $2$. Our work with the symmetric group earlier in the chapter showed that $S_3$ has $e = \sqrt{3}$ in this range. Interestingly, this is the only exception. The largest possible group that can still have an $e < 2$ is of order 7 since $\sqrt{7/2} < 2$ but $\sqrt{8/2} \not< 2$. There are no non-abelian groups of order 3, 4, 5, or 7 so any group that would have $1 < e < 2$ must be of order 6. There are only two groups of order 6, the cyclic group of order 6 and $S_3$. Since the former is abelian, $S_3$ is the only group with an $e$ between 1 and 2.
+
+\hss
+
+Next, we extend the work above and classify groups with prime values of $e$. This result is the strong start to a complete collection of understood $e$ values. Even though $e$ is not always an integer, it is based on integral values and, hence, does not range over all real numbers (as we saw above, $e$ takes exactly one value between 1 and 2). Furthermore, this theorem illustrates that $e$ has a strong relationship with the structure of a group. Before we get to this classification, we present a required lemma.
 
 \begin{lemma}\label{psquared}
 Let $P$ be a group of order $p^2$ for some prime $p$. Then $P$ is abelian.
