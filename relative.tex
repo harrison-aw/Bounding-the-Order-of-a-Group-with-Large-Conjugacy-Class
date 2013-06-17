@@ -6,7 +6,7 @@
 
 In this section, we consider a generalization of the parameter $e$ that incorporates a normal subgroup. For $x \in G$ and $N \normal G$, let $c_N(x) = |C_G(x):C_N(x)|$ and $k_N(x) = |G:NC_G(x)|$. We then define $e_N$, the relative parameter, as follows:
 $$e_N = min\{(c_N(x) - 1) \cdot \sqrt{k_N(x)} : x \in G\}\text{.}$$
-If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that this parameter is indeed distinct from our parameter $e$ for the factor group. The first difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Thus, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (in fact, this is true for all pairs $G$ and $N$ such that $e_N = 0$).
+If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that $e_N$ is distinct from our parameter $e$ for the factor group. An important difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Therefore, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (in fact, this is true for all pairs $G$ and $N$ such that $e_N = 0$).
 
 
 
@@ -41,20 +41,24 @@ k_N(x) &= |G : NC_G(x)| \\
 and thus $k_N(x) = 1$ if and only if $|x^N| = |x^G|$. But, since $x^N \subseteq x^G$, it must be the case that $x^N = x^G$ and thus $x^G$ is non-split.
 \end{proof}
 
-We begin by noting that it is possible for $e_N$ to equal zero because $c_N(x)$ can equal one. Also, given the lower bounds on $c_N$ and $k_N$, we have that $e_N \ge 0$. This brings us to our first result:
+We begin by noting that $e_N \ge 0$ since $c_N(x)$ and $k_N(x)$ are both greater than 1. This brings us to our first result:
 
 \begin{theorem}\label{en0}
-Let $G$ be a finite gorup with normal subgroup $N$. The parameter $e_N$ is zero if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers.
+Let $G$ be a finite group with normal subgroup $N$. The parameter $e_N = 0$ if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers.
 \end{theorem}
 
 \begin{proof}
 Suppose $e_N = 0$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = 0$. Since $k_N(x) \ge 1$, we must have $c_N(x) = 1$. Then $C_G(x) = C_N(x)$ and $C_G(x) \le N$. Reversing this chain of logic gives the converse.
 \end{proof}
 
-Along this same line of inquiry, we consider the $e_N = 1$ case and then generalize to the case where $e_N$ is prime.
+Zero is the minimum value $e_N$ can take since both $c_N(x)$ and $k_N(x)$ are greater than or equal to 1 and $e_N$ is non-decreasing with respect to both $c_N(x)$ and $k_N(x)$ (see the previous chapter for a discussion of this; the argument is the same). The next smallest value of $e_N$ is 1. For $e_N > 0$, we must have $c_N(x) \ge 2$. Since $e_N$ is non-decreasing with respect to $k_N(x)$, we may conclude that $e_N = 1$ is the smallest non-zero value $e_N$ can take. This mirrors the situation with the non-relative $e$ in that the values $e_N$ can take are indexed by pairs of positive integers.
+
+Many pairs of groups $G$ and normal subgroups $N$ have $e_N = 0$. Since the parameter is defined as a minimum, if $N$ contains any centralizers, it must fall into this class of groups. Notably this includes Frobenius groups which were ubiquitous in the last chapter. This gives further evidence that the relative $e_N$ is distinct from the non-relative $e$.
+
+The next theorem continues our classification of specific values of $e_N$ and considers the case when $e_N = 1$.
 
 \begin{theorem}\label{en1}
-The parameter $e_N$ equals one if and only if $|G:N| = 2$ and $x^G$ is non-split.
+The parameter $e_N =1$ if and only if $|G:N| = 2$ and $x^G$ is non-split.
 \end{theorem}
 
 \begin{proof}
@@ -67,6 +71,10 @@ Suppose $e_N = 1$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot 
 Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We may infer then that $|G : N| = |C_G(x) : C_N(x)| = c_N(x)$. Thus, $e_N = 1$. 
 \end{proof}
 
+The easiest examples of pairs with $e_N = 1$ are even order abelian groups with a normal subgroup of index 2. Suppose $G$ is an even-order abelian group. Then $G$ contains an involution $t$ and $G = N \times \generate{t}$. Since $G$ is abelian and $N$ is proper, $N$ cannot contain any centralizers. Furthermore, a conjugacy class containing a single element cannot be split. Thus, $e_N = 1$ for abelian groups $G$ and a normal subgroup $N$ of index 2.
+
+It seems potentially possible for $e_N = \sqrt{2}$ too. The reasoning here is similar to that used for the non-relative $e$. However, I have been unable to find a non-trivial example that gives this particular value. It may be the case that the relative $e_N$ is very restrictive on the relationship between $G$ and a normal subgroup $N$ and that pairs where $e_N > 1$ are comparatively rare.
+
 \begin{theorem}
 If $e_N = p$ for a prime $p$, then either:
 \begin{enumerate}
@@ -76,10 +84,10 @@ If $e_N = p$ for a prime $p$, then either:
 \end{theorem}
 
 \begin{proof}
-Let $e_N = p$. There exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = p$. Since $c_N(x) - 1$ is an integer and $k_N(x) \ge 1$, both $c_N(x) - 1$ and $\sqrt{k_N(x)}$ must divide $p$. Then either
+Let $e_N = p$. There exists an $x \in G$ such that $(c_N(x) - 1) \cdot \sqrt{k_N(x)} = p$. Since $c_N(x) - 1$ is an integer and $k_N(x) \ge 1$, both $c_N(x) - 1$ and $\sqrt{k_N(x)}$ must be factors of $p$ (i.e., integers whose product is $p$). Then we may infer, since $p$ is prime, that either:
 \begin{enumerate}
-	\item $c_N(x) = p + 1$ and $k_N(x) = 1$ or
-	\item $c_N(x) = 2$ and $k_N(x) = p^2$
+	\item $c_N(x) - 1 = p$ and $\sqrt{k_N(x)} = 1$ or
+	\item $c_N(x) - 1 = 1$ and $\sqrt{k_N(x)} = p$.
 \end{enumerate}
 
 \subsubsection*{Case 1} Suppose $c_N(x) = p + 1$ and $k_N(x) = 1$. By Lemma \ref{kn1}, $x^G = x^N$. All that remains to be shown is the index of $N$ in $G$. We have
