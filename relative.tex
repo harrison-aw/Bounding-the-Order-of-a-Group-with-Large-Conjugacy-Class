@@ -32,13 +32,13 @@ The first part of the lemma follows direction from the fact that both $c_N(x)$ a
 For the next part, consider $|NC_G(x)|$. It satisfies the following identity:
 $$|NC_G(x)| = \frac{|N| \cdot |C_G(x)|}{|C_N(x)|}\text{.}$$
 
-Now suppose $k_N(x) = 1$. Then
+Now
 \begin{align*}
-1 = k_N(x) &= |G : NC_G(x)| \\
+k_N(x) &= |G : NC_G(x)| \\
 &= |G| \cdot \frac{|C_N(x)|}{|N| \cdot |C_G(x)|} \\
 &= \frac{|G : C_G(x)|}{|N : C_N(x)|}
 \end{align*}
-We may infer that $|x^G| = |x^N|$. But, since $x^N \subseteq x^G$, it must be the case that $x^N = x^G$ and thus $x^G$ is non-split.
+and thus $k_N(x) = 1$ if and only if $|x^N| = |x^G|$. But, since $x^N \subseteq x^G$, it must be the case that $x^N = x^G$ and thus $x^G$ is non-split.
 \end{proof}
 
 We begin by noting that it is possible for $e_N$ to equal zero because $c_N(x)$ can equal one. Also, given the lower bounds on $c_N$ and $k_N$, we have that $e_N \ge 0$. This brings us to our first result:
