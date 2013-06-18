@@ -4,7 +4,7 @@
 
 \chapter{Introduction}
 
-In 2008, Noah Snyder \cite{snyderarticle} published a result on a group parameter $e$. He classified groups based on fixed values of $e$ and bounded the order of a group in terms of $e$. His definition is this:
+In 2008, Noah Snyder \cite{snyderarticle} published a result on a group parameter $e$. He classified groups based on fixed values of $e$ and bounded the order of a group in terms of $e$. His definition was this:
 
 \hss
 
@@ -54,7 +54,7 @@ For $e > 1$, we have the follwing bounds on $|G|$ in terms of $e$:
 
 \noindent Since $e$ is an integer, this theorem has as an immediate corollary that $|G| < e^6 - e^4$ for all groups $G$. It is still a polynomial of degree 6, but is significantly smaller than Isaacs' bound.
 
-Mark Lewis made the most recent advance. He gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$ and, since there exist solvable groups which attain this bound, it is best possible.
+Mark Lewis made the most recent advance. He gave general conditions \cite{lewisarticle} for a group to satisfy the stronger bound $|G| \le e^4 - e^3$.
 
 \hss
 
@@ -102,11 +102,11 @@ where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ ch
 $$|G| = \sum_{i=1}^n |x_i^G|$$
 where there are $n$ distinct conjugacy classes and the $x_i \in G$ are representitatives of each of these conjugacy classes. Since the number of irreducible characters and conjugacy classes are the same, the primary difference between the two identities is the presence of squared terms in the former. The simplest way to accomodate this is to consider the square root of conjugacy class sizes instead of just conjugacy class sizes:
 $$|G| = \sum_{i=1}^n \left(\sqrt{|x_i^G|}\right)^2\text{.}$$
-This maintains the form of (\ref{degreeidentity}) even though our terms are no longer rational. The main benefit of this change is that it makes the definition of an analogous $e$ more natural.
+This maintains the form of (\ref{degreeidentity}) even though our terms are no longer rational. The main benefit of this change is that it makes the definition of an analogous $e$ resemble the original very closely.
 
-Taking $d$ to be the square root of a conjugacy class, we can define an analog $e$ with Snyder's equation: $|G| = d(d+e)$. We still have that  $d^2 + de$ is a sum of non-negative integers but, unfortunately, that is the extent of the parallel. This analog $e$ is not an integer. It does, however, have the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This is inherent in the equation $|G| = d(d + e)$ (analysis of the derivative, an exercise left to the reader, verifies that $d$ is a decreasing function of $e$ for a fixed group order). For non-trivial groups, this indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups attaining the bound.
+Taking $d$ to be the square root of a conjugacy class, we can define an analog $e$ with Snyder's equation: $|G| = d(d+e)$. We still have that  $d^2 + de$ is a sum of non-negative integers but, unfortunately, that is the extent of the parallel. This analog can take on irrational values. It does, however, have the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This is inherent in the equation $|G| = d(d + e)$ (analysis of the derivative, an exercise left to the reader, verifies that $d$ is a decreasing function of $e$ for a fixed group order). For non-trivial groups, this indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups attaining the bound.
 
-We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as before that $e$ is not an integer. In spite of this, there are still some worthwhile results for the analog. We will provide a general bound and give results for fixed values of $e$.
+We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as above: $e$ can be irrational. In spite of this, there are still some worthwhile results for the analog. We will provide results for fixed values of $e$ and discuss.
 
-The rest of this paper proceeds with chapters of background material grouped by topics and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following although, where possible, we try to present all supporting results. When it is not feasible to provide a proof, a reference is given.
+The rest of this paper proceeds with chapters of background material and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following although, where possible, we try to present all supporting results. When it is not feasible to provide a proof, a reference is given.
 \end{document}
