@@ -6,11 +6,27 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{indentfirst}
 
 \usepackage[margin=1in]{geometry}
 
-\usepackage{setspace}
+\pagestyle{plain} 
 
+\usepackage{mathptmx}
+\usepackage{lmodern}
+\newcommand{\sizetwelvefixed}{\fontsize{12}{14.4}\selectfont}
+\usepackage{titlesec}
+% \titleformat{\chapter}[display]% OLD
+%     {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}% OLD
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}% OLD
+\titleformat{\chapter}[display]% NEW
+    {\fontfamily{ptm}\large\bfseries\centering}{\chaptertitlename\ \thechapter}{5pt}{\large}% NEW
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+
+\titleformat{\section}% NEW
+    {\fontfamily{ptm}\normalsize\bfseries}{\thesection}{5pt}{\normalsize}% NEW
+
+\usepackage{setspace}
 \doublespacing
 
 \addtolength{\oddsidemargin}{.25in}
@@ -26,7 +42,6 @@
 \externaldocument{actions}
 \externaldocument{frobenius}
 \externaldocument{results}
-
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -44,8 +59,6 @@
 
 \newcommand{\normal}{\triangleleft}
 \newcommand{\generate}[1]{\langle #1 \rangle}
-
 \newcommand{\degree}{\ensuremath{^\circ}}
-
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
