@@ -4,6 +4,10 @@
 
 \chapter{Introduction}
 
+This thesis considers a problem in a branch of abstract algebra known as finite group theory. Finite group theory is concerned with the structure of finite sets of objects related to one another by a binary operator such as mutliplication or addition. Often, these structures are related to various forms of symmetry.
+
+\hss 
+
 In 2008, Noah Snyder \cite{snyderarticle} published a result on a group parameter $e$. He classified groups based on fixed values of $e$ and bounded the order of a group in terms of $e$. His definition was this:
 
 \hss
@@ -37,7 +41,7 @@ This sparked a series of publications aiming to improve upon the bound. The firs
 
 This result required the simple group classification theorem for full generality, but succeeded in giving a polynomial bound. Interestingly, it spawned another paper \cite{larsenmalletieparticle} whose results were necessary to complete certain cases of Isaacs' proof.
 
-Two students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. They removed the universal constant from Isaacs bound and then some. Their main result was the following:
+Two students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. They removed the universal constant from Isaacs bound. Their main result was the following:
 
 \hss
 
@@ -98,9 +102,9 @@ Our approach is to preserve the following identity:
 \begin{equation}\label{degreeidentity}
 |G| = \sum_{i=1}^n d_i^2
 \end{equation}
-where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ character degrees of $G$. This is a well-known identity that holds for all finite groups \cite{gorensteinfinitegroups}. We thus want to replace the $d_i$'s with analogous values for conjugacy classes. Sizes of conjugacy classes satisfy a similar identity:
+where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ ordinary irreducible characters of $G$. This is a well-known identity that holds for all finite groups \cite{gorensteinfinitegroups}. We thus want to replace the $d_i$'s with analogous values for conjugacy classes. Since the number of irreducible characters is the same as the number of conjugacy classes, this is a reasonable goal. Furthermore, the sizes of conjugacy classes satisfy a similar identity:
 $$|G| = \sum_{i=1}^n |x_i^G|$$
-where there are $n$ distinct conjugacy classes and the $x_i \in G$ are representitatives of each of these conjugacy classes. Since the number of irreducible characters and conjugacy classes are the same, the primary difference between the two identities is the presence of squared terms in the former. The simplest way to accomodate this is to consider the square root of conjugacy class sizes instead of just conjugacy class sizes:
+where there are $n$ distinct conjugacy classes and the $x_i \in G$ are representatives of each of these conjugacy classes. The primary difference between the two identities is the presence of squared terms in the former. The simplest way to accomodate this is to consider the square root of conjugacy class sizes instead of just conjugacy class sizes:
 $$|G| = \sum_{i=1}^n \left(\sqrt{|x_i^G|}\right)^2\text{.}$$
 This maintains the form of (\ref{degreeidentity}) even though our terms are no longer rational. The main benefit of this change is that it makes the definition of an analogous $e$ resemble the original very closely.
 
@@ -109,4 +113,6 @@ Taking $d$ to be the square root of a conjugacy class, we can define an analog $
 We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as above: $e$ can be irrational. In spite of this, there are still some worthwhile results for the analog. We will provide results for fixed values of $e$ and discuss.
 
 The rest of this paper proceeds with chapters of background material and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following although, where possible, we try to present all supporting results. When it is not feasible to provide a proof, a reference is given.
+
+Our notation will follow closely that used in Isaacs' \emph{Finite Group Theory} \cite{isaacsfinitegrouptheory} and other notation will be introduced as needed.
 \end{document}
