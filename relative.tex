@@ -6,7 +6,7 @@
 
 In this section, we consider a generalization of the parameter $e$ that incorporates a normal subgroup. For $x \in G$ and $N \normal G$, let $c_N(x) = |C_G(x):C_N(x)|$ and $k_N(x) = |G:NC_G(x)|$. We then define $e_N$, the relative parameter, as follows:
 $$e_N = min\{(c_N(x) - 1) \cdot \sqrt{k_N(x)} : x \in G\}\text{.}$$
-If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that $e_N$ is distinct from our parameter $e$ for the factor group. An important difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Therefore, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (in fact, this is true for all pairs $(G, N)$ such that $e_N = 0$). In fact, we can prove a stronger relationship.
+If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that $e_N$ is distinct from our parameter $e$ for the factor group. An important difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Therefore, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (this is true for all pairs $(G, N)$ such that $e_N = 0$). In fact, we can prove a stronger relationship.
 
 \begin{theorem}
 Let $N$ be a normal subgroup of $G$. If $e_N$ is the relative parameter for $(G, N)$ and $e$ is the non-relative paramter for $G/N$, then $e_N < e$.
@@ -69,7 +69,7 @@ and thus $k_N(x) = 1$ if and only if $|x^N| = |x^G|$. But, since $x^N \subseteq 
 We begin by noting that $e_N \ge 0$ since $c_N(x)$ and $k_N(x)$ are both greater than 1. This brings us to our first result:
 
 \begin{theorem}\label{en0}
-Let $G$ be a finite group with normal subgroup $N$. The parameter $e_N = 0$ if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers.
+Let $G$ be a finite group with normal subgroup $N$. The parameter $e_N = 0$ if and only if $C_G(x) \le N$ for some $x \in G$. In particular, $e_N > 0$ if $N$ contains no centralizers $C_G(x)$ for any $x \in G$.
 \end{theorem}
 
 \begin{proof}
@@ -96,9 +96,9 @@ Suppose $e_N = 1$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot 
 Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We may infer then that $2 = |G : N| = |C_G(x) : C_N(x)| = c_N(x)$. Thus, $e_N = 1$. 
 \end{proof}
 
-The easiest examples of pairs with $e_N = 1$ are even order abelian groups paired with a normal subgroup of index 2. Suppose $G$ is an even-order abelian group. Then $G$ contains an involution $t$ and $G = N \times \generate{t}$. Since $G$ is abelian and $N$ is proper, $N$ cannot contain any centralizers. Furthermore, a conjugacy class containing a single element cannot be split. Thus, $e_N = 1$ for pairs $(G, N)$ with $G$ abelian and $|G : N| = 2$. A non-abelian example is not known.
+The easiest examples of pairs with $e_N = 1$ are even order abelian groups paired with a normal subgroup of index 2. Suppose $G$ is an even-order abelian group. Then $G$ contains an involution $t$ and $G = N \times \generate{t}$. Since $G$ is abelian and $N$ is proper, $N$ cannot contain any centralizers. Furthermore, a conjugacy class containing a single element cannot be split. Thus, $e_N = 1$ for pairs $(G, N)$ with $G$ abelian and $|G : N| = 2$. For a non-abelian example consider $G = S_3 \times \generate{x}$ where $x^2 = 1$, that is the direct product of the symmetric group on 3 letters and the cyclic group of order 2. Take $N = S_3 \times 1$ and we get that $|G:N| = 2$. Now, given that $N$ and $1 \times \generate{x}$ centralize each other, it is easy to verify that all conjugacy classes of $G$ are non-split. Then $(G, N)$ has $e_N = 1$.
 
-The next value of interest is $\sqrt{2}$. It seems potentially possible for $e_N = \sqrt{2}$. The reasoning here is similar to that used for the non-relative $e$. However, an example that gives this particular value is, at present, unknown. It may be the case that the relative $e_N$ is very restrictive on the relationship between $G$ and a normal subgroup $N$ and that pairs where $e_N > 1$ are comparatively rare. With that in mind, we move on to our next theorem.
+The next value of interest is $\sqrt{2}$. It seems potentially possible for $e_N = \sqrt{2}$ by reasoning similar to that used for the non-relative $e$. However, an example that gives this particular value is, at present, unknown.
 
 \begin{theorem}
 If $e_N = p$ for a prime $p$, then either:
@@ -124,6 +124,6 @@ $$k_N(x) = \frac{|G:N|}{c_N(x)}\text{.}$$
 Then $|G:N| = k_N(x) \cdot c_N(x) = 2p^2$. Also, since $k_N(x) > 1$, $x^G \ne x^N$ and $x^G$ is split.
 \end{proof}
 
-The former case is satisfied by certain abelian groups. Let $G$ be abelian and $x \in G$ have order $p + 1$ for a prime $p$. Then $G = N \times \generate{x}$ for some normal subgroup $N$ and so $e_N = p$ for $(G, N)$. As above, a non-abelian example is not known at present. Such an example would require a non-abelian group with a normal subgroup containing no centralizers, a condition that warrants further study.
+The former case is satisfied by certain abelian groups. Let $G$ be abelian and $x \in G$ have order $p + 1$ for a prime $p$. Then $G = N \times \generate{x}$ for some subgroup $N$ and so $e_N = p$ for $(G, N)$. As above, a non-abelian example is not known at present. Such an example would require a non-abelian group with a normal subgroup containing no centralizers, a condition that warrants further study.
 
 \end{document}
