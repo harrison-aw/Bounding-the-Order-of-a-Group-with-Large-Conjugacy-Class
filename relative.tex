@@ -6,11 +6,36 @@
 
 In this section, we consider a generalization of the parameter $e$ that incorporates a normal subgroup. For $x \in G$ and $N \normal G$, let $c_N(x) = |C_G(x):C_N(x)|$ and $k_N(x) = |G:NC_G(x)|$. We then define $e_N$, the relative parameter, as follows:
 $$e_N = min\{(c_N(x) - 1) \cdot \sqrt{k_N(x)} : x \in G\}\text{.}$$
-If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that $e_N$ is distinct from our parameter $e$ for the factor group. An important difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Therefore, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (in fact, this is true for all pairs $(G, N)$ such that $e_N = 0$).
+If $N=1$, then $c_N(x) = |C_G(x)|$ and $k_N(x) = |G:C_G(x)|$ which yields $e_N = min\{(|C_G(x)| - 1)\cdot\sqrt{|G:C_G(x)|}\} = e$. This new parameter thus generalizes our previous analog. Note that $e_N$ is distinct from our parameter $e$ for the factor group. An important difference is that $e_N$ can be zero for non-trivial groups (see Theorem \ref{en0}). Therefore, there are groups $G$ for which $G/N$ has a non-zero $e$ but $G$ has $e_N = 0$ for the same normal subgroup (in fact, this is true for all pairs $(G, N)$ such that $e_N = 0$). In fact, we can prove a stronger relationship.
 
+\begin{theorem}
+Let $N$ be a normal subgroup of $G$. If $e_N$ is the relative parameter for $(G, N)$ and $e$ is the non-relative paramter for $G/N$, then $e_N < e$.
+\end{theorem}
 
+\begin{proof}
+Using the ``bar convention'', consider the relationship between $C_{\overline{G}}(\overline{x})$ and $\overline{C_G(x)}$ for $x \in G$. If $xg = gx$ ($g \in G$), then $\overline{x}\, \overline{g} = \overline{g}\, \overline{x}$. Thus, $\overline{C_G(x)} \le C_{\overline{G}}(\overline{x})$. Note that
+\begin{align*}
+c_N(x) &= |C_G(x) : C_N(x)| \\
+&= |C_G(x)/(C_G(x) \cap N)| \\
+&= |\overline{C_G(x)}| \text{.}
+\end{align*}
+Since $c(\overline{x}) = |C_{\overline{G}}(\overline{x})|$, $c_N(x) \le c(\overline{x})$.
 
- Before we analyze $e_N$, we introduce a definition used by J. Britnell and M. Wildon \cite{britnellwildonarticle}.
+Now, the function $g(n) = (n-1)/\sqrt{n}$ is increasing over the positive real numbers since its derivative, $g'(n)=(n+1)/2n^{3/2}$, is positive for $n>0$. Then
+$$g(c_N(x)) = \frac{c_N(x)-1}{\sqrt{c_N(x)}} \le \frac{c(\overline{x})-1}{\sqrt{c(\overline{x})}} = g(c(\overline{x}))\text{.}$$
+
+We can now show that $e_N \le e$. Let $y \in G$ be such that $e = (c(\overline{y}) - 1) \sqrt{k(\overline{y})}$.  Then
+\begin{align*}
+e &= g(c(\overline{y})) \cdot \sqrt{|G:N|} \\
+&\ge g(c_N(y)) \cdot \sqrt{|G:N|} \\
+&= (c_N(y) - 1) \cdot \sqrt{k_N(y)} \text{.}
+\end{align*}
+Finally, 
+$$e_N = min\{(c_N(x) - 1) \sqrt{k_N(x)} : x \in G\} \le (c_N(y) - 1) \sqrt{k_N(y)} \le e$$
+and so $e_N \le e$.
+\end{proof}
+
+ Before we continue to analyze $e_N$, we introduce a definition used by J. Britnell and M. Wildon \cite{britnellwildonarticle}.
 
 \hss
 
