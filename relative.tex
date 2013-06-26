@@ -96,7 +96,7 @@ Suppose $e_N = 1$. Then there exists an $x \in G$ such that $(c_N(x) - 1) \cdot 
 Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We may infer then that $2 = |G : N| = |C_G(x) : C_N(x)| = c_N(x)$. Thus, $e_N = 1$. 
 \end{proof}
 
-The easiest examples of pairs with $e_N = 1$ are even order abelian groups paired with a normal subgroup of index 2. Suppose $G$ is an even-order abelian group. Then $G$ contains an involution $t$ and $G = N \times \generate{t}$. Since $G$ is abelian and $N$ is proper, $N$ cannot contain any centralizers. Furthermore, a conjugacy class containing a single element cannot be split. Thus, $e_N = 1$ for pairs $(G, N)$ with $G$ abelian and $|G : N| = 2$. For a non-abelian example consider $G = S_3 \times \generate{x}$ where $x^2 = 1$, that is the direct product of the symmetric group on 3 letters and the cyclic group of order 2. Take $N = S_3 \times 1$ and we get that $|G:N| = 2$. Now, given that $N$ and $1 \times \generate{x}$ centralize each other, it is easy to verify that all conjugacy classes of $G$ are non-split. Then $(G, N)$ has $e_N = 1$.
+One example giving $e_N = 1$ is $G = N \times \generate{t}$ for any group $N$ and where $t^2 = 1$. Then $t$ is in the center of $G$ and so, for any $x \in G$, $x^N = x^{Nt}$. We infer from this that $x^N = x^G$ and so all the conjugacy classes of $G$ are non-split. Since $|G : N| = 2$, the previous theorem gives $e_N = 1$ for $(G, N)$.
 
 The next value of interest is $\sqrt{2}$. It seems potentially possible for $e_N = \sqrt{2}$ by reasoning similar to that used for the non-relative $e$. However, an example that gives this particular value is, at present, unknown.
 
@@ -124,6 +124,14 @@ $$k_N(x) = \frac{|G:N|}{c_N(x)}\text{.}$$
 Then $|G:N| = k_N(x) \cdot c_N(x) = 2p^2$. Also, since $k_N(x) > 1$, $x^G \ne x^N$ and $x^G$ is split.
 \end{proof}
 
-The former case is satisfied by certain abelian groups. Let $G$ be abelian and $x \in G$ have order $p + 1$ for a prime $p$. Then $G = N \times \generate{x}$ for some subgroup $N$ and so $e_N = p$ for $(G, N)$. As above, a non-abelian example is not known at present. Such an example would require a non-abelian group with a normal subgroup containing no centralizers, a condition that warrants further study.
+The former case is satisfied by certain direct products. Let $G = N \times A$ where $N$ can be any group and $A$ is abelian of order $p+1$ for a prime $p$. Then $|G : N| = p + 1$ and $A \le Z(G)$. Thus, for $x \in G$, $x^N = x^{Na}$ for $a \in A$. Because all cosets of $N$ produce the same orbit via conjugation, $x^G = x^N$. We know then that all conjugacy classes of $G$ are non-split with respect to $N$ and so $e_N = p$ for $(G, N)$.
 
+For the latter case, we consider another construction. Let $G = N \times H$ where $N$ is abelian and $H$ is generalized dihedral of order $2p^2$. Then $N \le Z(G)$. We see that $x^H = x^{Hn}$ for $x \in G$ and $n \in N$ and conclude, as before, that $x^H = x^G$ for all $x \in G$. Note that $|(hn)^H| = |h^H|$ for $h \in H$ and $n \in N$. Without loss of generality then, we can assume that for some $h \in H$, $e_N = (c_N(h) - 1) \sqrt{k_N(h)}$. Also, $C_G(h) = N C_H(h)$ so
+$$c_N(h) = |C_G(h) : C_N(h)| = |N C_H(h) : N| = |C_G(h)| \text{.}$$
+Now,
+\begin{align}
+e_N &= (c_N(h) - 1) \cdot \sqrt{\frac{|G:N|}{c_N(h)}}\nonumber \\
+&= (|C_H(h)| - 1) \cdot \sqrt{|H : C_H(h)|}\label{heequation} \text{.}
+\end{align}
+We recognize (\ref{heequation}) as being equivalent to the non-relative parameter for $H$. By Theorem \ref{eprime} then, $e_N = p$.
 \end{document}
