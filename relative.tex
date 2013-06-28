@@ -98,7 +98,11 @@ Now, let $|G:N| = 2$ and $x^G = x^N$. Then $k_N(x) = 1$ by Lemma \ref{kn1}. We m
 
 One example giving $e_N = 1$ is $G = N \times \generate{t}$ for any group $N$ and where $t^2 = 1$. Then $t$ is in the center of $G$ and so, for any $x \in G$, $x^N = x^{Nt}$. We infer from this that $x^N = x^G$ and so all the conjugacy classes of $G$ are non-split. Since $|G : N| = 2$, the previous theorem gives $e_N = 1$ for $(G, N)$.
 
-The next value of interest is $\sqrt{2}$. It seems potentially possible for $e_N = \sqrt{2}$ by reasoning similar to that used for the non-relative $e$. However, an example that gives this particular value is, at present, unknown.
+The next value of interest is $\sqrt{2}$. Let $G = D_8$ and $N = Z(D_8)$. Then $|G : N| = 4$. Since all conjugacy classes of $G$ are either of size 1 or size 4, we know that each non-central element of $G$ has centralizer of order 4. Then we may conclude that $c_N(x) = 2$ for $x \in G - N$ and $e_N = \sqrt{2}$ for $(G, N)$.
+
+The relative parameter can also take on the value $\sqrt{3}$. Let $G = A_4$, the alternating group on 4 letters, and let $N = \generate{(12)(34)}$. Here $|G : N| = 6$. There are two conjugacy class sizes other than 1: 3 and 4 \cite{smallgroups}. The latter classes are larger but must have centralizers of order 3 which cannot intersect N non-trivially. The former class, let us denote it $x^G$ consists of all ``double transpositions'' of $A_4$ and yields $c_N(x) = 2$. Given that $A_4$ has no classes of size 6, $c_N(x) = 2$ is minimal. Then, for $(G, N)$, $e_N = \sqrt{3}$.
+
+There are no other possible values between 1 and 2. Theorem \ref{en1} handles the case where $c_N(x) = 1$ and $k_N(x) = 1$. The preceding paragraphs handle the $c_N(x) = 2$, $k_N(x) = 2$ and the $c_N(x) = 2$, $k_N(x) = 3$ cases respectively. All other choices for these terms imply $e_N \ge 2$.
 
 \begin{theorem}
 If $e_N = p$ for a prime $p$, then either:

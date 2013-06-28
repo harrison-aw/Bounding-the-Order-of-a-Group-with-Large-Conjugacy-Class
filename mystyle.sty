@@ -9,6 +9,9 @@
 \usepackage{indentfirst}
 
 \usepackage[margin=1in]{geometry}
+\usepackage{biblatex}
+
+\bibliography{bibliography}
 
 \pagestyle{plain} 
 
@@ -16,25 +19,18 @@
 \usepackage{lmodern}
 \newcommand{\sizetwelvefixed}{\fontsize{12}{14.4}\selectfont}
 \usepackage{titlesec}
-% \titleformat{\chapter}[display]% OLD
-%     {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}% OLD
-% \titlespacing*{\chapter}{0pt}{50pt}{40pt}% OLD
-\titleformat{\chapter}[display]% NEW
-    {\fontfamily{ptm}\large\bfseries\centering}{\chaptertitlename\ \thechapter}{5pt}{\large}% NEW
-\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+\titleformat{\chapter}[display]
+    {\fontfamily{ptm}\large\bfseries\centering}{\chaptertitlename\ \thechapter}{5pt}{\large}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
 
-\titleformat{\section}% NEW
-    {\fontfamily{ptm}\normalsize\bfseries}{\thesection}{5pt}{\normalsize}% NEW
+\titleformat{\section}
+    {\fontfamily{ptm}\normalsize\bfseries}{\thesection}{5pt}{\normalsize}
 
 \usepackage{setspace}
 \doublespacing
 
 \addtolength{\oddsidemargin}{.25in}
 \addtolength{\evensidemargin}{.25in}
-
-\usepackage{biblatex}
-
-\bibliography{bibliography}
 
 \usepackage{xr}
 \externaldocument{intro}

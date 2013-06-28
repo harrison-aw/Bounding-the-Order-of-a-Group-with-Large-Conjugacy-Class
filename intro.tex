@@ -18,7 +18,7 @@ Let $G$ be a group of order $n$ and $V$ an irreducible representation of $G$ ove
 
 \hss
 
-The parameter $e$ must be an integer since $d$ divides $|G|$. It has the interesting property that if $e$ is small relative to $d$, then $G$ has a character of large degree.
+The parameter $e$ must be an integer since $d$ divides $|G|$ \cite[p.96]{gorensteinfinitegroups}. It has the interesting property that if $e$ is small relative to $d$, then $G$ has a character of large degree.
 
 Before Snyder, Yakov Berkovich classified groups where $e=1$ and $e=2$ \cite{berkovicharticle}. Snyder added to this classification by solving the case where $e=3$. His most noteworthy contribution to this problem, though, is the following theorem:
 
@@ -41,7 +41,7 @@ This sparked a series of publications aiming to improve upon the bound. The firs
 
 This result required the simple group classification theorem for full generality, but succeeded in giving a polynomial bound. Interestingly, it spawned another paper \cite{larsenmalletieparticle} whose results were necessary to complete certain cases of Isaacs' proof.
 
-Two students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. They removed the universal constant from Isaacs bound. Their main result was the following:
+Two students of Isaacs, Christina Durfee and Sara Jensen, were the next to make headway on the problem. They removed the universal constant from Isaacs' bound. Their main result was the following:
 
 \hss
 
@@ -102,15 +102,15 @@ Our approach is to preserve the following identity:
 \begin{equation}\label{degreeidentity}
 |G| = \sum_{i=1}^n d_i^2
 \end{equation}
-where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ ordinary irreducible characters of $G$. This is a well-known identity that holds for all finite groups \cite{gorensteinfinitegroups}. We thus want to replace the $d_i$'s with analogous values for conjugacy classes. Since the number of irreducible characters is the same as the number of conjugacy classes, this is a reasonable goal. Furthermore, the sizes of conjugacy classes satisfy a similar identity:
+where $d_i$ is the degree of an irreducible character and $i$ indexes the $n$ ordinary irreducible characters of $G$. This is a well-known identity that holds for all finite groups \cite{gorensteinfinitegroups}. We thus want to replace the $d_i$'s with analogous values for conjugacy classes. Since the number of irreducible characters is the same as the number of conjugacy classes \cite[p.96]{gorensteinfinitegroups}, this is a reasonable goal. Furthermore, the sizes of conjugacy classes satisfy a similar identity:
 $$|G| = \sum_{i=1}^n |x_i^G|$$
 where there are $n$ distinct conjugacy classes and the $x_i \in G$ are representatives of each of these conjugacy classes. The primary difference between the two identities is the presence of squared terms in the former. The simplest way to accomodate this is to consider the square root of conjugacy class sizes instead of just conjugacy class sizes:
 $$|G| = \sum_{i=1}^n \left(\sqrt{|x_i^G|}\right)^2\text{.}$$
 This maintains the form of (\ref{degreeidentity}) even though our terms are no longer rational. The main benefit of this change is that it makes the definition of an analogous $e$ resemble the original very closely.
 
-Taking $d$ to be the square root of a conjugacy class, we can define an analog $e$ with Snyder's equation: $|G| = d(d+e)$. We still have that  $d^2 + de$ is a sum of non-negative integers but, unfortunately, that is the extent of the parallel. This analog can take on irrational values. It does, however, have the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes. This is inherent in the equation $|G| = d(d + e)$ (analysis of the derivative, an exercise left to the reader, verifies that $d$ is a decreasing function of $e$ for a fixed group order). For non-trivial groups, this indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups attaining the bound.
+Taking $d$ to be the square root of a conjugacy class, we can define an analog $e$ with Snyder's equation: $|G| = d(d+e)$. We still have that  $d^2 + de$ is a sum of non-negative integers but, unfortunately, that is the extent of the parallel. This analog can take on irrational values. It does, however, have the property that small values of $e$ relative to $d$ correspond to large conjugacy class sizes (see Chapter 5). For non-trivial groups, this indicates that our $e$ is an adequate analog. In this thesis, we bound the group order in terms of this analogous $e$ and then classify groups attaining the bound.
 
-We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as above: $e$ can be irrational. In spite of this, there are still some worthwhile results for the analog. We will provide results for fixed values of $e$ and discuss.
+We also consider a relative parameter in the spirit of Durfee's research. Let $N$ be a fixed normal subgroup of $G$. Let $x \in G$ and $d = \sqrt{|x^G|/|x^N|}$. Define $e$ via $|G/N| = d(d+e)$. Here we have the same issue as above: $e$ can be irrational. In spite of this, there are still some worthwhile results for the analog. We will provide results for fixed values of $e$ and discuss the groups associated with them.
 
 The rest of this paper proceeds with chapters of background material and then two chapters for our main results, one for Snyder's analog and the other for Durfee's analog. A solid understanding of group theory is assumed in the following although, where possible, we try to present all supporting results. When it is not feasible to provide a proof, a reference is given.
 

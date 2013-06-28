@@ -6,7 +6,7 @@
 
 Here begin the main results of this thesis. The following chapter is devoted to a group theoretic analog to Snyder's parameter. We replace his use of irreducible character degrees with the square roots of conjugacy class sizes. Both of these satisfy the identity:
 $$|G| = \sum_{i=1}^n d_i^2$$
-where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of characters or conjugacy classes (the number of objects indexed is the same in both cases (cite)). After initial definitions and examples, we will analyze the properties of and range of values $e$ can take. Then, we will bound the order of a group by our parameter and characterize groups attaining this bound.
+where $d_i$ is either character degrees or square roots of conjugacy class sizes and $i$ indexes the total set of characters or conjugacy classes (the number of objects indexed is the same in both cases \cite[p.96]{gorensteinfinitegroups}). After initial definitions and examples, we will analyze the properties of and range of values $e$ can take. Then, we will bound the order of a group by our parameter and characterize groups attaining this bound.
 
 Without further ado:
 
@@ -29,7 +29,7 @@ If we let $d = \sqrt{k(x)}$, we arrive at the equation $|G| = d (d + e)$. Since 
 
 For a more detailed analysis of this relation, consider the function $f(c) = (c - 1) \sqrt{n/c}$ where $n$ is the order of a group and $c$ is the order of a centralizer. Then $e$ is the minimum of $f$ over the domain of possible centralizer orders. Since $f'(c) = \sqrt{n/c} \cdot (c+1) / 2c$ and $c \ge 1$, the function $f$ must be monotonically increasing. Thus, small values of $e$ are correlated with small centralizers or, equivalently, large conjugacy class sizes. In particular, the smallest possible values of $e$ are attained only by groups with a conjugacy class that contains exactly half of the group's elements, the largest non-trivial conjugacy class possible relative to a group's order (see Theorem \ref{boundaryclassification}).
 
-For abelian groups, calculating $e$ is nearly trivial. Since all conjugacy classes are singletons in such groups, we have $e = n - 1$. Another easy example is the the symmetric groups. The largest conjugacy class in $S_n$ is that of the $(n-1)$-cycles (cite) and it has size $n!/(n-1)$. The value of $e$ for $S_n$ is then:
+For abelian groups, calculating $e$ is nearly trivial. Since all conjugacy classes are singletons in such groups, we have $e = n - 1$. Another easy example is the the symmetric groups. The largest conjugacy class in $S_n$ is that of the $(n-1)$-cycles and it has size $n!/(n-1)$ (see Appendix). The value of $e$ for $S_n$ is then:
 $$e = (n - 2) \cdot \sqrt{\frac{n!}{n-1}}\text{.}$$
 
 \hss
