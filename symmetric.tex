@@ -1,0 +1,55 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Appendix A: The Largest Conjugacy Class of the Symmetric Group}
+
+Conjugation in the symmetric group is well-understood. Unfortunately, its classes are not often analyzed for size. Here we build off the conjugation properties of $S_n$ and show that its largest conjugacy class is that of the $(n-1)$-cycles.
+
+To begin, we review a few basic facts about conjugation in $S_n$.
+
+\begin{theorem}[\cite{symmetricconjugation}]
+Disjoint cycles of $S_n$ commute.
+\end{theorem}
+
+\begin{theorem}[\cite{symmetricconjugation}]
+Every permutation in $S_n$ has a cycle decomposition that is unique up to ordering of the cycles and up to a cyclic permutation of the elements within each cycle.
+\end{theorem}
+
+\begin{theorem}[\cite{symmetricconjugation}]\label{permutationclasssize}
+Suppose $\sigma \in S_n$, and let $m_1, m_2, \ldots m_r$ be the distinct integers (including 1 if applicable) in the cycle type of $\sigma$, and let there be $k_i$ cycles of order $m_i$ in $\sigma$. (Thus $\sum k_i m_i = n$.) Then $\sigma$ has conjugacy class of size:
+$$\frac{n!}{\prod_{i=1}^r (k_i!m_i^{k_i})}\text{.}$$
+\end{theorem}
+
+\begin{theorem}\label{permutationcentralizer}
+Let $\sigma \in S_n$. Then $|C_{S_n}(\sigma)| \ge n - 1$.
+\end{theorem}
+
+\begin{proof}
+The permutation $\sigma$ has a unique cycle decomposition into $m$ cycles $\sigma = \sigma_1 \sigma_2 \ldots \sigma_m$ where each $\sigma_i$ is disjoint from $\sigma_j$ for all $j \ne i$. Let $k_i$ denote the cycle length of $\sigma_i$ and $\kappa = \sum_{i = 1}^m k_i$. Note that $\kappa \le n$. Consider the elements that commute with $\sigma$: Each subgroup $\generate{\sigma_i}$ commutes with $\sigma$ as does each cycle disjoint from $\sigma$. Together then, we have
+$$|C_{S_n}(\sigma)| \ge \sum_{i=1}^m [k_i - 1] + (n - \kappa) = n - m$$
+where the summation ignores identity elements. But then $\sigma$ also commutes with
+\begin{align*}
+&\sigma_1 \sigma_2 \ldots \sigma_m \\
+&\sigma_1 \sigma_2 \ldots \sigma_{m-1} \\
+&\vdots \\
+&\sigma_1 \sigma_2
+\end{align*}
+which yields another $m-1$ elements not already counted. Thus $|C_{S_n}(\sigma)| \ge n-1$.
+\end{proof}
+
+\begin{corollary}
+The symmetric group $S_n$ can have no conjugacy class larger than $n!/(n-1)$.
+\end{corollary}
+
+\begin{theorem}
+The largest conjugacy class in $S_n$ is of size $n!/(n-1)$.
+\end{theorem}
+
+\begin{proof}
+Let $\sigma \in S_n$ be an $(n-1)$-cycle. Its cycle type is $[(n-1), 1]$ and it has only one cycle of each order. Then $\sigma$ has class size:
+$$\frac{n!}{(1!(n-1)^1)(1!1^1)} = \frac{n!}{n-1}$$
+by Theorem \ref{permutationclasssize}.
+\end{proof}
+
+\end{document}

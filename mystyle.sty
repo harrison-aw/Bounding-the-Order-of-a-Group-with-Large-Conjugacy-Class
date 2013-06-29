@@ -7,18 +7,24 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{indentfirst}
+\usepackage{setspace}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{biblatex}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{xr}
+
+\usepackage{mathptmx}
+\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{url}
 
 \bibliography{bibliography}
 
 \pagestyle{plain} 
 
-\usepackage{mathptmx}
-\usepackage{lmodern}
+
 \newcommand{\sizetwelvefixed}{\fontsize{12}{14.4}\selectfont}
-\usepackage{titlesec}
+
 \titleformat{\chapter}[display]
     {\fontfamily{ptm}\large\bfseries\centering}{\chaptertitlename\ \thechapter}{5pt}{\large}
 \titlespacing*{\chapter}{0pt}{30pt}{20pt}
@@ -26,18 +32,20 @@
 \titleformat{\section}
     {\fontfamily{ptm}\normalsize\bfseries}{\thesection}{5pt}{\normalsize}
 
-\usepackage{setspace}
+
 \doublespacing
 
 \addtolength{\oddsidemargin}{.25in}
 \addtolength{\evensidemargin}{.25in}
 
-\usepackage{xr}
+
 \externaldocument{intro}
 \externaldocument{dihedral}
 \externaldocument{actions}
 \externaldocument{frobenius}
 \externaldocument{results}
+\externaldocument{relative}
+\externaldocument{symmetric}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
